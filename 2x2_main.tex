@@ -1,0 +1,66 @@
+\documentclass[aps,prd,preprint,superscriptaddress,nofootinbib]{revtex4-1}
+\pdfoutput=1
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage[svgnames]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{listings} 
+\usepackage[normalem]{ulem}
+\usepackage[section]{placeins}
+\usepackage{braket}
+\usepackage{multirow}
+\usepackage{tabulary}
+\usepackage{hyperref}% add hypertext capabilities
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{lineno}
+\usepackage{multirow}
+\usepackage{soul}
+\usepackage{makecell}
+\usepackage{siunitx}
+\sisetup{separate-uncertainty=true}
+
+\newcommand{\todo}[1]{{\color{red} (To Do: #1)}}
+\newcommand{\blue}[1]{\textcolor{NALblue}{#1}}
+\newcommand\addcite{[{\color{blue} \underline{CITATION NEEDED}}]}
+
+%% Just for now
+% \linenumbers\relax % Commence numbering lines
+
+\begin{document}
+
+\title{ProtoDUNE-ND: proposal to place the 2x2 ArgonCube demonstrator module in a neutrino beamline at Fermilab}
+
+\author{A.N.\,Other}
+
+\date{\today}
+
+\begin{abstract}
+Maybe replace this with an executive summary?
+\end{abstract}
+
+\maketitle
+
+% For now suppress the table of contents
+%\tableofcontents
+
+\input{introduction.tex}
+\input{protodune-nd.tex}
+\input{detector-physics-studies.tex}
+\input{outlook.tex}
+\input{conclusions.tex}
+
+\begin{acknowledgments}
+Thanks for all the $$$
+\end{acknowledgments}
+
+\bibliography{bibliography.bib}% Produces the bibliography via BibTeX.
+
+%\appendix
+%\input{an_appendix}
+
+\end{document}
