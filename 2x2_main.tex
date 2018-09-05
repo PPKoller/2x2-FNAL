@@ -5,20 +5,18 @@
 \usepackage{graphicx}
 \usepackage{xspace}
 \usepackage[svgnames]{xcolor}
-\usepackage{caption}
-\usepackage{subcaption}
+\usepackage[caption=false]{subfig}
+\usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{listings} 
 \usepackage[normalem]{ulem}
-\usepackage[section]{placeins}
+\usepackage{placeins}
 \usepackage{braket}
 \usepackage{multirow}
 \usepackage{tabulary}
 \usepackage{hyperref}% add hypertext capabilities
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
-\usepackage{lineno}
-\usepackage{multirow}
 \usepackage{soul}
 \usepackage{makecell}
 \usepackage{siunitx}
@@ -28,8 +26,9 @@
 \newcommand{\blue}[1]{\textcolor{NALblue}{#1}}
 \newcommand\addcite{[{\color{blue} \underline{CITATION NEEDED}}]}
 
-%% Just for now
-% \linenumbers\relax % Commence numbering lines
+\newcommand{\enu}{\ensuremath{E_{\nu}}\xspace}
+\def\bracketbar{\hbox{\kern-9pt\raise1pt%
+    \hbox{{\tiny(}{\lower1.5pt\hbox{\bf--}}{\tiny)}}}}
 
 \begin{document}
 
