@@ -11,16 +11,18 @@
 \usepackage{listings} 
 \usepackage[normalem]{ulem}
 \usepackage{placeins}
-\usepackage{braket}
+%\usepackage{braket}
 \usepackage{multirow}
 \usepackage{tabulary}
 \usepackage{hyperref}% add hypertext capabilities
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
 \usepackage{soul}
-\usepackage{makecell}
+%\usepackage{makecell}
 \usepackage{siunitx}
 \sisetup{separate-uncertainty=true}
+\DeclareSIUnit\radlen{\text{\ensuremath{X_{\mathrm{0}}}}}
+\DeclareSIUnit\clight{\text{\ensuremath{c}}} % remove 0 subscript from speed of light
 
 \newcommand{\todo}[1]{{\color{red} (To Do: #1)}}
 \newcommand{\blue}[1]{\textcolor{NALblue}{#1}}
