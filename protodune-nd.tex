@@ -70,9 +70,13 @@ ArgonCube offers true 3D tracking information using the LArPix pixelated charge 
 With LArPix, the reconstruction issues in a high rate environment are drastically simplified with respect to traditional projective wire readout TPCs, but in order to correctly reconstruct an event, scintillation signals need to be correctly matched to charge signals (flash matching). If these are correctly matched, the prompt scintillation light defines the time at which ionization electrons start to drift, and the time it takes to register charge on the anode plane along with the electric field strength allow give you enough information to reconstruct the third spatial co-ordinate (along the drift direction). In a modular detector, this problem can easily be made easier using an opaque cathode and module walls, which contains scintillation light to each TPC (half module), and effectively reduce the event pile-up. Furthermore, attenuation due to Rayleigh scattering,$6.6\times10^{-1}$~m, is much less of a problem than in large monolithic detectors. It is desirable to have a large area photon detection system to maximize the utility of scintillation light signals in the detector. However, the downside to modularization is the dead regions between adjacent TPCs, which introduce gaps in the reconstruction, so any light detection system must be compact. The solution pursued for the ArgonCube effort is ArCLight~\cite{arclight}, which is a very compact dielectric light trap that allows for light collection from a large area, inside high electric fields. An example ArCLight sheet is shown in Figure~\ref{fig:arclight}. These sheets are mounted on the walls of the module aligned with the drift direction, between the anode and the cathode. The additional dead volume of a few \si{\milli\metre} is similar to the one caused by the charge readout in the perpendicular direction.
 
 
-\todo{James, can you comment on the 2x2 needs from the external nfrastructure point of view?}
+\todo{James, can you comment on the 2x2 needs from the external infrastructure point of view?}
 
-\subsection{3DST}
+\subsection{Downstream tracking detectors}
+\label{sec:tracking_detectors}
+\todo{Check this document actually says what I'm saying it does!}
+As well as an ArgonCube-like LAr component, the recommendations from DUNE Near Detector Concept Study Group~\cite{dune_ndcsg} are for there to be additional, downstream tracking detectors in the DUNE ND to tag and measure the energies of particles which exit the downstream face of the LAr detector, and a magnetized component to identify the sign of muons (and other particles). It would therefore enhance the utility of ProtoDUNE-ND, as an intermediate-scale test of the DUNE ND, to include prototype versions of these detectors. It would also enhance any additional possible physics outputs from ProtoDUNE-ND, as many events will not be 
+
 \label{sec:3dst-design}
 \todo{Chang Kee advised that there was no prototype expected on this timescale. Rewrite as a possible extension of the program if it becomes available.}
 
