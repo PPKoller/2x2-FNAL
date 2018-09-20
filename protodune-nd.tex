@@ -74,13 +74,14 @@ With LArPix, the reconstruction issues in a high rate environment are drasticall
 
 \subsection{Downstream tracking detectors}
 \label{sec:tracking_detectors}
-\todo{Check this document actually says what I'm saying it does!}
-As well as an ArgonCube-like LAr component, the recommendations from DUNE Near Detector Concept Study Group~\cite{dune_ndcsg} are for there to be additional, downstream tracking detectors in the DUNE ND to tag and measure the energies of particles which exit the downstream face of the LAr detector, and a magnetized component to identify the sign of muons (and other particles). It would therefore enhance the utility of ProtoDUNE-ND, as an intermediate-scale test of the DUNE ND, to include prototype versions of these detectors. It would also enhance any additional possible physics outputs from ProtoDUNE-ND, as many events will not be 
+As well as an ArgonCube-like LAr component, the recommendations from DUNE Near Detector Concept Study Group~\cite{dune_ndcsg} are for there to be additional, downstream tracking detectors in the DUNE ND to tag and measure the energies of particles which exit the downstream face of the LAr detector, and a magnetized component to identify the sign of muons (and other particles). It would therefore enhance the utility of ProtoDUNE-ND, as an intermediate-scale test of the DUNE ND, to include prototype versions of these detectors. It would also enhance any additional possible physics outputs from ProtoDUNE-ND, as many events in the high-energy NuMI ME beamline will not be fully contained in the ArgonCube 2x2 Demonstrator module (examples can be seen in Figures~\ref{fig:argonbox_event_display} and~\ref{fig:leaky_event}). Two downstream tracking options considered  by the DUNE Near Detector Concept Study Group are the Three Dimensional Scintillator Tracker (3DST), and the High-Pressure gaseous argon TPC (HPgTPC).
 
-\label{sec:3dst-design}
-\todo{Chang Kee advised that there was no prototype expected on this timescale. Rewrite as a possible extension of the program if it becomes available.}
+The 3DST is a fully active plastic scintillator detector made of a large number of optically independent 1x1x1 cm$^{3}$ cubes read out in three orthogonal directions by wavelength shifting fibers~\cite{3dst}. The 3DST is envisioned as an upgrade to the plastic scintillator detectors read out in two dimensions used by T2K, NOvA and MINERvA~\addcite, which will provide better angular resolution. Unfortunately, after consultation with the 3DST steering group, it was found that a large scale prototype suitable for ProtoDUNE-ND will not be available on the required timescale. If the situation changes, we note the desirability of including such a prototype in the proposed ProtoDUNE-ND effort.
 
-\subsection{HPTPC}
-\label{sec:hptpc-design}
-\todo{Alan said that he would talk with Jen and get back to us}
+The HPgTPC is a high-pressure argon gas TPC which will operate inside a magnetic field~\cite{dune_ndcsg}. Its purpose is two-fold. Firstly, it acts as a downstream tracker for particles exiting the LAr detector, with a superior dE/dx resolution, and the ability to measure the sign and momentum of particles in the magnetic field. Secondly, it offers a lower threshold, higher resolution argon target detector than the LAr component, which may help constrain certain aspects of the model. The HPgTPC needs to be coupled with a further downstream ECal to detect escaping photons, and to provide fast timing to differentiate tracks from multiple interactions. \todo{Alan said that he would talk with Jen about the possibility of an HPgTPC and get back to us.}
+
+\todo{Whether or not the HPgTPC prototype is available, it would be good to use MINERvA, downstream of the 2x2, or the HPgTPC, depending on what we have. Need to check this politically, and to approach MINERvA people.}
+
+%\subsection{HPTPC}
+%\label{sec:hptpc-design}
 
