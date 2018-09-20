@@ -28,8 +28,8 @@ In order to be a relevant test for the full ArgonCube near detector, which will 
   \centering
   \subfloat[$\mu^{\pm}$] {\includegraphics[width=0.5\textwidth]{plots/2x2_muon_mom_all.png}}
   \subfloat[Protons]    {\includegraphics[width=0.5\textwidth]{plots/2x2_proton_Ek_all.png}}\\
-  \subfloat[$\pi^{+}$]    {\includegraphics[width=0.5\textwidth]{plots/2x2_piplus_Ek_all.png}}
-  \subfloat[$\pi^{-}$]    {\includegraphics[width=0.5\textwidth]{plots/2x2_piminus_Ek_all.png}}  
+  \subfloat[$\pi^{+}$]   {\includegraphics[width=0.5\textwidth]{plots/2x2_piplus_Ek_all.png}}
+  \subfloat[$\pi^{-}$]   {\includegraphics[width=0.5\textwidth]{plots/2x2_piminus_Ek_all.png}}  
   \caption{The expected yearly rates of various particles produced at the vertex, as a function of their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every relevant particle from each event is included. \todo{Get the muon kinetic energy!}}
   \label{fig:kinetic_energies}
 \end{figure}
@@ -43,16 +43,45 @@ An important challenge is to develop automated event reconstruction software wit
 
 \subsection{Neutron identification}
 
-\todo{Patrick's note. Quantitative test of how well we can combine light and charge signals.}
+Neutrons present a particular challenge for neutrino energy reconstruction in DUNE and other long-baseline neutrino oscillation experiments. Neutrino oscillations are a function of neutrino energy, but this cannot be reconstructed on an event by event basis because neutrons carry away some fraction of the energy, and are not directly observable. Figure~\ref{fig:neutron_kinematics} shows the expected neutron rate as a function of multiplicity and kinetic energy for the LBNF and NuMI ME beamlines.
 \begin{figure}[htb]
   \centering
   \subfloat[Neutron multiplicity]   {\includegraphics[width=0.5\textwidth]{plots/2x2_nneutron_all.png}}
   \subfloat[Neutron kinetic energy] {\includegraphics[width=0.5\textwidth]{plots/2x2_neutron_Ek_all.png}}  
-  \caption{The expected yearly rates of $\pi^{0}$'s produced at the vertex, as a function of event multiplicity and their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every $\pi^{0}$ from each event is included.}
-  \label{fig:pi0_kinematics}
+  \caption{The expected yearly rates of neutrons produced at the vertex, as a function of event multiplicity and their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every neutron from each event is included in the kinetic energy distribution.}
+  \label{fig:neutron_kinematics}
 \end{figure}
 
-\todo{Get the source for Patrick's neutron document. Steal some...}
+There are two possible ways to identify the presence of neutrons in an event:
+\begin{enumerate}
+\item Detection of slow neutrons with kinetic energies of $\mathcal{O}$~keV through neutron capture. This is usually achieved by applying a neutron affine coating, e.g. gadolinium, to the detector walls. The radiation emitted from excited nuclei after having captured a neutron is interaction-specific and thereby serves as an indicator for slow neutrons.
+\item Detection of fast neutrons with kinetic energies from $\mathcal{O}$~1 MeV-- 1 GeV through recoiling charge particles after a collision of a neutron with a nucleus. The recoiling particle can be the nucleus as a whole, or, if the neutron exceeds the nuclear binding energy ($\sim$~5~MeV for an argon nucleus), a knock-out proton or heavier nuclear fragments like deuterons.
+\end{enumerate}
+For oscillation experiments, fast neutrons are a much greater issue, as they may carry away a significant fraction of the neutrino energy in an event. It is, therefore, of great interest to investigate the potential of LAr experiments to tag these missing neutron with neutron-induced recoils. Investigating the neutron tagging rate in ProtoDUNE-ND will provide useful information for DUNE sensitivity studies as it will In the ProtoDUNE-ND, this provides an opportunity to investigate how well charge and light signals can be combined.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]{plots/primary_neutron_recoils.png}
+  \caption{Kinetic-energy distribution of secondary particles with respect to incident neutron kinetic energy for neutron interactions in LAr, shown for 100'000 simulated neutrino events (which may have more than one neutron produced at the vertes).}
+  \label{fig:neutron_recoils}
+\end{figure}
+Figure~\ref{fig:neutron_recoils} shows the kinetic energy of secondary particles after the interaction of a primary neutron in LAr. The horizontal red line, gives the energy threshold for the detection of these secondary particles with ArCLight~\cite{arclight}. Clearly, both recoiling argon nuclei and recoiling protons have kinetic energies well above the ArCLight detection threshold. While recoiling argon nuclei show typical energies between 100~keV and 1~MeV, recoiling protons show energies $>$~1~MeV, up to several GeVs.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{plots/proton_track_length.png}
+  \caption{Track length of recoiling protons for neutrons produced in 100,000 neutrino interactions. About 30~\% of all recoils are resolvable as tracks with the LArPix pixel charge-readout system.}
+  \label{fig:proton_length}
+\end{figure}
+Given the LArPix $\sim$~3~mm pixel-pitch (see Section~\ref{sec:2x2-design}), the minimum reconstructable track length in ArgonCube is also $\gtrsim$~3~mm. Figure~\ref{fig:proton_length} shows the track length of recoiling protons with respect to the primary neutron kinetic energy. Recoiling protons can, depending on their energy, produce tracks which are up to $\sim$10~cm long. About 30~\% of all recoiling protons are resolvable by the pixelated charge readout, which correspond to protons are knocked out of a nucleus by primary neutrons with energies $\gtrsim$~50~MeV.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{plots/min_dist_vtx_proton_recoil.png}
+  \caption{The minimum distance between the neutrino vertex and the neutron-induced proton track, as a function of neutron kinetic energy. Produced with 100,000 initial neutrino events simulated by ArgonBox.}
+  \label{fig:min_dist_proton}
+\end{figure}
+Figure~\ref{fig:min_dist_proton} shows the minimum distance between the neutrino vertex and the neutron-induced proton track, as a function of neutron kinetic energy. The majority of proton recoils occur within 1 m, so many neutron-induced proton recoils will be contained within the 2x2 demonstrator module.
 
 \FloatBarrier
 \subsection{Reconstruction in a modular environment}
@@ -70,7 +99,7 @@ A more quantitative measure of how well EM showers can be reconstructed in the m
   \centering
   \subfloat[$\pi^{0}$ multiplicity]   {\includegraphics[width=0.5\textwidth]{plots/2x2_npi0_all.png}}
   \subfloat[$\pi^{0}$ kinetic energy] {\includegraphics[width=0.5\textwidth]{plots/2x2_pi0_Ek_all.png}}  
-  \caption{The expected yearly rates of $\pi^{0}$'s produced at the vertex, as a function of event multiplicity and their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every $\pi^{0}$ from each event is included.}
+  \caption{The expected yearly rates of $\pi^{0}$'s produced at the vertex, as a function of event multiplicity and their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every $\pi^{0}$ from each event is included in the kinetic energy distribution.}
   \label{fig:pi0_kinematics}
 \end{figure}
 There are, of course, some qualifiers for this study. Many photon-induced showers will not be contained, and those which are will be lower energy than many EM showers expected in the DUNE ND. Figure~\ref{fig:pi0_kinematics} shows the expected $\pi^{0}$ production rate in the active volume of the 2x2 demonstrator module in the LBNF NuMI ME beamlines, as a function of $\pi^{0}$ multiplicity in each event and $\pi^{0}$ kinetic energy. Two further issues for this study are apparent. Firstly, events with more than one $\pi^{0}$ introduce a problem: even if two EM showers are fully contained, they may not come from the same $\pi^{0}$ decay. Secondly, of those $\pi^{0}$ decays for which both photons are fully contained, the initial $\pi^{0}$ is likely to have a low kinetic energy, which is likely to exclude some fraction of the events. However, despite these challenges, a measure of EM shower resolution from ProtoDUNE-ND would be very useful for DUNE ND design studies, so this possibility is worth investigating further.
@@ -87,7 +116,7 @@ There are, of course, some qualifiers for this study. Many photon-induced shower
 \subsection{Electric field uniformity and space charge build-up}
 A concern for LAr detectors in a high intensity beam is the build up of space charge --- long-lived argon ions which drift slowly towards the cathode --- and possible affects on the uniformity of the electric field which may accumulate over time. In currently operating and near-future LAr detectors~\addcite (uB and SBND), both cosmic tracks and UV lasers are used to calibrate for distortions in the electric field. Both the UV laser track and high energy cosmic muons are expected to leave straight tracks in the detector. If the drift field is not uniform across the detector, ionization electrons produced along the length of this track will not drift at the same speed, and will result in a distorted track at the readout plane. By comparing the reconstructed and expected track, a map of the electric field distortion can be built up for calibration purposes.
 
-Assuming that the 2x2 demonstrator module is equipped with scintillator panels to tag cosmic tracks using a timing coincidence between two sides of the detector, and reasonable spatial resolution on those scintillator paddles, electric field distortions could be measured in the 2x2 demonstrator module. By looking at beam-on, and beam-off data, it would be possible to look at the possible affect of space charge build-up over time due to the high event rate in the NuMI beam. If significant space charge build-up were observed, this would inform the future ArgonCube ND design, as a higher drift field strenght would be required. \todo{Is this utter horseshit?}.
+Assuming that the 2x2 demonstrator module is equipped with scintillator panels to tag cosmic tracks using a timing coincidence between two sides of the detector, and reasonable spatial resolution on those scintillator paddles, electric field distortions could be measured in the 2x2 demonstrator module. By looking at beam-on, and beam-off data, it would be possible to look at the possible affect of space charge build-up over time due to the high event rate in the NuMI beam. If significant space charge build-up were observed, this would inform the future ArgonCube ND design, as a higher drift field strength would be required. \todo{Is this utter horseshit?}.
 
 Additionally, although the electric-field uniformity of the resistive field shell will be checked in a small scale LAr TPC at Bern, a check of the electric-field uniformity and stability over time for full-size ArgonCube modules would be a valuable final validation of the design.
 
