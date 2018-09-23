@@ -26,14 +26,14 @@ In order to be a relevant test for the full ArgonCube near detector, which will 
 
 \begin{figure}[htb]
   \centering
-  \subfloat[$\mu^{\pm}$] {\includegraphics[width=0.5\textwidth]{plots/2x2_muon_e_all.png}}
-  \subfloat[Protons]    {\includegraphics[width=0.5\textwidth]{plots/2x2_proton_Ek_all.png}}\\
-  \subfloat[$\pi^{+}$]   {\includegraphics[width=0.5\textwidth]{plots/2x2_piplus_Ek_all.png}}
-  \subfloat[$\pi^{-}$]   {\includegraphics[width=0.5\textwidth]{plots/2x2_piminus_Ek_all.png}}  
-  \caption{The expected yearly rates of various particles produced at the vertex, as a function of their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every relevant particle from each event is included. \todo{Get the muon kinetic energy!}}
-  \label{fig:kinetic_energies}
+  \subfloat[$\mu^{\pm}$] {\includegraphics[width=0.5\textwidth]{plots/2x2_muon_mom_all.png}}
+  \subfloat[Protons]    {\includegraphics[width=0.5\textwidth]{plots/2x2_proton_mom_all.png}}\\
+  \subfloat[$\pi^{+}$]   {\includegraphics[width=0.5\textwidth]{plots/2x2_piplus_mom_all.png}}
+  \subfloat[$\pi^{-}$]   {\includegraphics[width=0.5\textwidth]{plots/2x2_piminus_mom_all.png}}  
+  \caption{The expected yearly rates of various particles produced at the vertex, as a function of their momentum, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every relevant particle from each event is included.}
+  \label{fig:momenta}
 \end{figure}
-In Figure~\ref{fig:kinetic_energies}, the kinetic energies of various particles coming from the initial neutrino--argon vertex are compared for the LBNF and NuMI ME beams. As expected, the energy distributions of all of the particles are slightly broader for the NuMI ME flux, but there are significant numbers of events with particle kinematics across the broad range of energies expected for the LBNF beams.
+In Figure~\ref{fig:momenta}, the momenta of various particles coming from the initial neutrino--argon vertex are compared for the LBNF and NuMI ME beams. As expected, the energy distributions of all of the particles are slightly broader for the NuMI ME flux, but there are significant numbers of events with particle kinematics across the broad range of energies expected for the LBNF beams.
 
 In the full ArgonCube detector and the more intense LBNF beamline, pile-up will be an additional challenge. \todo{Patrick to add a comment on pile-up at NuMI}. Additionally, the relatively small size of the 2x2 Demonstrator module means that relatively fewer of the tracks will be contained, making particle identification (PID) studies challenging, except for the cases listed below. Although other detectors are not included in the ArgonBox simulation, the lack of containment and PID capabilities mean that including another subdetector in the ProtoDUNE-ND setup is essential for any ancilliary physics measurements to be made.
 
@@ -42,12 +42,12 @@ In the full ArgonCube detector and the more intense LBNF beamline, pile-up will 
 An important challenge is to develop automated event reconstruction software with the ArgonCube detector. The pixel readout removes the ambiguities present for projective wire readout TPCs, but the reconstruction software for the latter has benefitted from several years of development for the MicroBooNE~\cite{microboone} and ICARUS experiments~\cite{icarus}. Although strides forward for pixel readout TPCs have been made forward in the PixLAr experiment (where pixel planes were introduced to the LArIAT experiment~\cite{lariat}), the reconstruction problem for charge particle scattering in a small TPC is much simpler than for the ProtoDUNE-ND or DUNE ND environments. Additionally, the recomstructed track position along the drift direction, and the suppression of cosmic backgrounds within the beam window, will be performed using information from the ArcLight light collection system. Checking that the light and charge signals can be combined in the full-size ArgonCube modules, in a comparably noisy environment to the DUNE ND, is an essential test of the ArgonCube design.
 
 \subsection{Neutron identification}
-Neutrons present a particular challenge for neutrino energy reconstruction in DUNE and other long-baseline neutrino oscillation experiments. Neutrino oscillations are a function of neutrino energy, but this cannot be reconstructed on an event by event basis because neutrons carry away some fraction of the energy, and are not directly observable. Figure~\ref{fig:neutron_kinematics} shows the expected neutron rate as a function of multiplicity and kinetic energy for the LBNF and NuMI ME beamlines.
+Neutrons present a particular challenge for neutrino energy reconstruction in DUNE and other long-baseline neutrino oscillation experiments. Neutrino oscillations are a function of neutrino energy, but this cannot be reconstructed on an event by event basis because neutrons carry away some fraction of the energy, and are not directly observable. Figure~\ref{fig:neutron_kinematics} shows the expected neutron rate as a function of multiplicity and momentum for the LBNF and NuMI ME beamlines.
 \begin{figure}[htb]
   \centering
   \subfloat[Neutron multiplicity]   {\includegraphics[width=0.5\textwidth]{plots/2x2_nneutron_all.png}}
-  \subfloat[Neutron kinetic energy] {\includegraphics[width=0.5\textwidth]{plots/2x2_neutron_Ek_all.png}}  
-  \caption{The expected yearly rates of neutrons produced at the vertex, as a function of event multiplicity and their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every neutron from each event is included in the kinetic energy distribution.}
+  \subfloat[Neutron momentum]       {\includegraphics[width=0.5\textwidth]{plots/2x2_neutron_mom_all.png}}  
+  \caption{The expected yearly rates of neutrons produced at the vertex, as a function of event multiplicity and their momentum, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every neutron from each event is included in the momentum distribution.}
   \label{fig:neutron_kinematics}
 \end{figure}
 
@@ -97,13 +97,13 @@ A more quantitative measure of how well EM showers can be reconstructed in the m
 \begin{figure}[htb]
   \centering
   \subfloat[$\pi^{0}$ multiplicity]   {\includegraphics[width=0.5\textwidth]{plots/2x2_npi0_all.png}}
-  \subfloat[$\pi^{0}$ kinetic energy] {\includegraphics[width=0.5\textwidth]{plots/2x2_pi0_Ek_all.png}}  
-  \caption{The expected yearly rates of $\pi^{0}$'s produced at the vertex, as a function of event multiplicity and their kinetic energy, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every $\pi^{0}$ from each event is included in the kinetic energy distribution.}
+  \subfloat[$\pi^{0}$ momentum] {\includegraphics[width=0.5\textwidth]{plots/2x2_pi0_mom_all.png}}  
+  \caption{The expected yearly rates of $\pi^{0}$'s produced at the vertex, as a function of event multiplicity and their momentum, expected in the 2x2 module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.8 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every $\pi^{0}$ from each event is included in the momentum distribution.}
   \label{fig:pi0_kinematics}
 \end{figure}
-There are, of course, some qualifiers for this study. Many photon-induced showers will not be contained, and those which are will be lower energy than many EM showers expected in the DUNE ND. Figure~\ref{fig:pi0_kinematics} shows the expected $\pi^{0}$ production rate in the active volume of the 2x2 demonstrator module in the LBNF NuMI ME beamlines, as a function of $\pi^{0}$ multiplicity in each event and $\pi^{0}$ kinetic energy. Two further issues for this study are apparent. Firstly, events with more than one $\pi^{0}$ introduce a problem: even if two EM showers are fully contained, they may not come from the same $\pi^{0}$ decay. Secondly, of those $\pi^{0}$ decays for which both photons are fully contained, the initial $\pi^{0}$ is likely to have a low kinetic energy, which is likely to exclude some fraction of the events. However, despite these challenges, a measure of EM shower resolution from ProtoDUNE-ND would be very useful for DUNE ND design studies, so this possibility is worth investigating further.
+There are, of course, some qualifiers for this study. Many photon-induced showers will not be contained, and those which are will be lower energy than many EM showers expected in the DUNE ND. Figure~\ref{fig:pi0_kinematics} shows the expected $\pi^{0}$ production rate in the active volume of the 2x2 demonstrator module in the LBNF NuMI ME beamlines, as a function of $\pi^{0}$ multiplicity in each event and $\pi^{0}$ momentum. Two further issues for this study are apparent. Firstly, events with more than one $\pi^{0}$ introduce a problem: even if two EM showers are fully contained, they may not come from the same $\pi^{0}$ decay. Secondly, of those $\pi^{0}$ decays for which both photons are fully contained, the initial $\pi^{0}$ is likely to have a low momentum, which is likely to exclude some fraction of the events. However, despite these challenges, a measure of EM shower resolution from ProtoDUNE-ND would be very useful for DUNE ND design studies, so this possibility is worth investigating further.
 
-\todo{Patrick: add ArgonBox study on this. Need: Event display examples of fully contained pi0 decay events. Efficiency for containing photons as a function of photon energy. Efficiency of containing two photons as a function of pi0 kinetic energy.}
+\todo{Patrick: add ArgonBox study on this. Need: Event display examples of fully contained pi0 decay events. Efficiency for containing photons as a function of photon energy. Efficiency of containing two photons as a function of pi0 momentum.}
 \todo{James, do you have any other comment on photon/electron separation? I decided this would be a better thing to aim for for Patrick's studies}
 \FloatBarrier
 \subsection{Michel tagging}
