@@ -32,7 +32,7 @@ ArgonCube, and the Argoncube 2x2 Demonstrator module are described in Ref.~\cite
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.45\linewidth]{plots/cryostat.png}
+\includegraphics[width=0.45\linewidth]{plots/cryostat_opt.png}
 \caption{The liquid nitrogen-cooled and vacuum-insulated cryostat that will host the ArgonCube 2x2 Demonstrator module, reproduced from Ref.~\cite{argoncube_loi}.}
 \label{fig:2x2_cryostat}
 \end{figure}
@@ -41,7 +41,7 @@ The basic principle of ArgonCube is a detector made of self-contained TPC module
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{plots/BathAndModule.png}
+\includegraphics[width=\textwidth]{plots/BathAndModule_opt.png}
 \caption{Illustration of the ArgonCube 2x2 Demonstrator module. The four modules are visible, with one of them is partly extracted, on the right. This figure has been reproduced from Ref.~\cite{argoncube_loi}.}
 \label{fig:2x2_extraction}
 \end{figure}
@@ -50,7 +50,7 @@ Individual modules can be extracted or reinserted into a common LAr bath as need
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{plots/Normal-Module-4K_labelled}
+  \includegraphics[width=0.8\textwidth]{plots/Normal-Module-4K_labelled_opt.png}
   \caption[ArgonCube module engineering drawing]{Cutaway drawing of a \SI{0.67 x 0.67 x 1.81}{\metre} ArgonCube module for the 2x2 Demonstrator module. For illustrative purposes the drawing shows traditional field shaping rings instead of a resistive field shell. Note, G10 walls will completely seal the module, isolating it from the neighbouring modules and the outer liquid argon bath.}
   \label{fig:ac_module}
 \end{figure}
@@ -68,7 +68,7 @@ ArgonCube offers true 3D tracking information using the LArPix pixelated charge 
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.75 \linewidth]{plots/1Film50x10.png}
+\includegraphics[width=0.75 \linewidth]{plots/1Film50x10_opt.png}
 \caption{A prototype ArgonCube light readout paddle built at the University of Bern. The paddle is 50~cm long and 10~cm wide, with four SiPMs coupled to one end. Reproduced from Ref.~\cite{argoncube_loi}.}
 \label{fig:arclight}
 \end{figure}
@@ -84,10 +84,7 @@ As well as an ArgonCube-like LAr component, the recommendations from the DUNE Ne
 
 The 3DST is a fully active plastic scintillator detector made of a large number of optically independent 1x1x1 cm$^{3}$ cubes read out in three orthogonal directions by wavelength shifting fibers~\cite{3dst}. The 3DST is envisioned as an upgrade to the plastic scintillator detectors read out in two dimensions used by T2K~\cite{t2k-fgd,t2k-ingrid}, NOvA~\cite{nova} and MINERvA~\cite{minerva-nim}, which will provide better angular resolution. Unfortunately, after consultation with the 3DST steering group, it was found that a large scale prototype suitable for ProtoDUNE-ND will not be available on the required timescale. If the situation changes, we note the desirability of including such a prototype in the proposed ProtoDUNE-ND effort.
 
-The HPgTPC is a high-pressure argon gas TPC which will operate inside a magnetic field~\cite{dune_ndcsg}. Its purpose is two-fold. Firstly, it acts as a downstream tracker for particles exiting the LAr detector, with a superior dE/dx resolution, and the ability to measure the sign and momentum of particles in the magnetic field. Secondly, it offers a lower threshold, higher resolution argon target detector than the LAr component, which may help constrain certain aspects of the model. The HPgTPC needs to be coupled with a further downstream ECal to detect escaping photons, and to provide fast timing to differentiate tracks from multiple interactions. \todo{Alan said that he would talk with Jen about the possibility of an HPgTPC and get back to us.}
+The HPgTPC is a high-pressure argon gas TPC which will operate inside a magnetic field~\cite{dune_ndcsg}. Its purpose is two-fold. Firstly, it acts as a downstream tracker for particles exiting the LAr detector, with a superior dE/dx resolution, and the ability to measure the sign and momentum of particles in the magnetic field. Secondly, it offers a lower threshold, higher resolution argon target detector than the LAr component, which may help constrain certain aspects of the model. The HPgTPC needs to be coupled with a further downstream ECal to detect escaping photons, and to provide fast timing to differentiate tracks from multiple interactions. Although a HPgTPC prototype is not ready at the time of writing this proposal, it is expected that a prototype will be produced during ProtoDUNE-ND operation, so the program should be flexible enough to incorporate a new detector component. A downstream ECal is required for the HPgTPC in order to provide fast timing to differentiate different interactions, and to detect photons which will not convert in the argon gas.
 
-\todo{Whether or not the HPgTPC prototype is available, it would be good to use MINERvA, downstream of the 2x2, or downstream of the HPgTPC, depending on what we have. Need to check this politically, and to approach MINERvA people.}
-
-%\subsection{HPTPC}
-%\label{sec:hptpc-design}
+As the LAr component of ProtoDUNE-ND may have to be moved in order to accommodate new prototype modules as they become available. Testing a moveable cryogenic system is also beneficial because a similar approach will be required if a moveable LAr detector is required for DUNE-PRISM at the DUNE ND.
 
