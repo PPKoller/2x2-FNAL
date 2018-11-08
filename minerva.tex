@@ -24,16 +24,37 @@ The downstream electromagnetic calorimeter is composed of 10 modules, each with 
 \end{figure}
 For the studies shown in this section, a simulation was performed approximating the downstream MINERvA central tracking region with a box of scintillator, and the ArgonCube 2x2 Demonstrator module upstream of the shortened MINERvA detector. \todo{Chris M to actually describe what this is...} An example event is shown in Figure~\ref{fig:2x2+MINERvA_event}, and can be compared with 2x2 only events in Figures~\ref{fig:argonbox_event_display} and~\ref{fig:leaky_event}. Note that this simulation only included the ArgonCube cryostat and MINERvA detector components, no material was included outside these (so escaping particles simply leave without ever re-interacting). This is unlike the previously described ArgonBox simulation, where a large box of argon was simulated (so escaping particles still re-interact). Events were again distributed uniformly throughout the ArgonCube active volume.
 
-We note that the configuration discussed here may not be optimal. Some of the MINERvA scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
+We note that the configuration discussed here may not be optimal. Some of the MINERvA scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Indeed, the optimal design would also depend on whether use of the MINOS near detector as part of the ProtoDUNE-ND setup were supported. Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
 
 \subsection{Detector physics studies possible with MINERvA components}
-
-\subsubsection{Neutron tagging studies}
+\todo{Add Patrick's plots here}
 
 \subsubsection{Track matching}
+\todo{Patrick needs to do this study!}
 
 \subsubsection{Acceptance studies}
+\todo{Update with higher statistics}
+
+The inclusion of MINERvA in ProtoDUNE-ND will improve the acceptance of particles for various studies, some of which were described in Section~\ref{}. Here, we show how the efficiency for contained events compares for the 2x2+MINERvA setup desribed above, with MINERvA components located downstream of the ArgonCube 2x2 Demonstrator module, and for the 2x2-only case.
+\begin{figure}[htb]
+  \centering
+  \subfloat[2x2-only]    {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/H_cont_eff_2x2.png}}
+  \subfloat[2x2+MINERvA] {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/H_cont_eff_2x2_MINERvA.png}}
+  \caption{Schematic of the MINERvA experiment. Reproduced from Figure 1 of Ref.~\cite{minerva-nim}.}
+  \label{fig:hadronic_containment}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \subfloat[2x2-only]    {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/Pi0_cont_eff_2x2.png}}
+  \subfloat[2x2+MINERvA] {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/Pi0_cont_eff_2x2_MINERvA.png}}
+  \caption{Schematic of the MINERvA experiment. Reproduced from Figure 1 of Ref.~\cite{minerva-nim}.}
+  \label{fig:pi0_containment}
+\end{figure}
+
+\subsubsection{Neutron tagging studies}
 
 \subsection{Validation of multiple coulomb scattering}
 
 \subsubsection{Use as a cosmic trigger}
+\todo{Move some stuff from previous sections for this.}
