@@ -14,9 +14,9 @@ The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purp
   \label{fig:minerva_detector}
 \end{figure}
 
-The remaining central tracking region, and both the electromagnetic and hadronic calorimeters are divided into modules which consist mostly of hexagonal scintillator planes, each made of 127 triangular scintillator bars, arranged in three different orientations (60$^\circ$ rotations between each plane). There are 62 modules in the fully-active tracker region, each composed of two scintillator layers. A 15 cm border of 0.2 mm thick lead on the downstream end of each module provides electromagetic calorimetry for particles exiting the side of the tracking region.
+The remaining central tracking region, and both the electromagnetic(EM) and hadronic calorimeters are divided into modules which consist mostly of hexagonal scintillator planes, each made of 127 triangular scintillator bars, arranged in three different orientations (60$^\circ$ rotations between each plane). There are 62 modules in the fully-active tracker region, each composed of two scintillator layers. A 15 cm border of 0.2 mm thick lead on the downstream end of each module provides EM calorimetry for particles exiting the side of the tracking region.
 
-The downstream electromagnetic calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 mm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva-module}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side electromagnetic and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
+The downstream EM calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 mm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva-module}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side EM and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
 
 \begin{figure}[htb]
   \centering
@@ -26,7 +26,7 @@ The downstream electromagnetic calorimeter is composed of 10 modules, each with 
 \end{figure}
 For the studies shown in this section, a simulation was performed approximating the downstream MINERvA central tracking region with a box of scintillator, and the ArgonCube 2x2 Demonstrator module upstream of the shortened MINERvA detector. \todo{Chris M to actually describe what this is...} An example event is shown in Figure~\ref{fig:2x2+MINERvA_event}, and can be compared with 2x2 only events in Figures~\ref{fig:argonbox_event_display} and~\ref{fig:leaky_event}. Note that this simulation only included the ArgonCube cryostat and MINERvA detector components, no material was included outside these (so escaping particles simply leave without ever re-interacting). This is unlike the previously described ArgonBox simulation, where a large box of argon was simulated (so escaping particles still re-interact). Events were again distributed uniformly throughout the ArgonCube active volume.
 
-We note that the configuration discussed here may not be optimal. Some of the MINERvA scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
+
 
 \subsection{Detector physics studies possible with MINERvA components}
 
@@ -38,4 +38,18 @@ We note that the configuration discussed here may not be optimal. Some of the MI
 
 \subsection{Validation of multiple coulomb scattering}
 
+\subsection{Repurposing the MINOS Near Detector}
+
+\todo{the following needs expanding from notes, and making consistent with the above}
+
+If the MINOS ND~\cite{MINOSDetectors} is not used as a muon range finder downstream of 2x2, then the entire MINERvA  detector should remain intact to maximise momentum selectivity.
+However, employing MINOS ND as a range finder will allow for the augmentation of MINERvA.
+
+MINERvA EM scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. 
+This would enable a test of the assumption that the DUNE ND does not require a side muon tracker. 
+Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
+
+Use of the MINOS ND, in combination with an augmented MINERvA, will allow the reconstruction of the entire properties of an event within 2x2. 
+Thus, providing the most thorough calibration of the response of 2x2.  
+ 
 \subsubsection{Use as a cosmic trigger}
