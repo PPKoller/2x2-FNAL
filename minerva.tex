@@ -1,7 +1,7 @@
 \section{Incorporating MINERvA components into ProtoDUNE-ND}
 \label{sec:MINERvA}
 
-\todo{MINOS ND should be included to. needed for most basic ArC response. also, needs to be part of initial proposal to Steve, NOT a secondary request - From Debbie}
+
 The MINERvA experiment~\cite{minerva-nim} is located in the MINOS ND hall in which ProtoDUNE-ND will be installed, and is due to complete its data-taking in spring--summer 2019. The collaboration is currently considering its detector decommissioning plan, and it has been suggested that some components of the MINERvA tracking scintillator detector could be repurposed for ProtoDUNE-ND. As discussed in Section~\ref{sec:protodune-nd}, all DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component. In this section, we outline the possible uses of the MINERvA detector components, and consider potential detector physics studies that they would bring to ProtoDUNE-ND.
 
 \subsection{Repurposing the MINERvA detector}
@@ -42,14 +42,23 @@ For the studies shown in this section, a simulation was performed approximating 
 
 \todo{the following needs expanding from notes, and making consistent with the above}
 
-If the MINOS ND~\cite{MINOSDetectors} is not used as a muon range finder downstream of 2x2, then the entire MINERvA  detector should remain intact to maximise momentum selectivity.
-However, employing MINOS ND as a range finder will allow for the augmentation of MINERvA.
+The MINOS ND~\cite{MINOS_NIM} is a magnetic spectrometer formed of \SI{1}{\kilo\tonne} of steel and plastic scintillator.
+It is located \SI{2.1}{\metre} downstream of MINERvA in the NuMI beam line. 
 
-MINERvA EM scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. 
+A schematic of MINOS ND is shown in Figure~\ref{fig:minos_near_detector}, it consists of 282 planes of \SI{2.54}{\centi\metre} thick steel. Only 152 planes are instrumented with scintillator. Each scintillator plane is made of \SI{1}{\centi\metre} thick  and \SI{4.1}{\centi\metre} wide strips. 
+The 120 most upstream planes form the calorimeter region, partially-instrumented scintillator planes separate steel planes, with only every fifth plane fully-instrumented. Downstream, the remaining 162 planes form the muon spectrometer, there are no partially instrumented planes and every fifth plane has full scintillator coverage. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{plots/minos.png}
+	\caption{Left: Top view of the MINOS near detector, showing the calorimeter and muon spectrometer (not to scale). Right: transverse view of a near detector plane. The shaded area shows a partially instrumented active scintillator plane and the dashed line within shows the boundary of the fiducial region. The dotted line shows the outline of a fully instrumented scintillator plane. Taken from Figure~2 of~\cite{MINOSDetectors}.}
+	\label{fig:minos_near_detector}
+\end{figure}
+
+Employing MINOS ND as a range finder will allow for the augmentation of MINERvA, since the entire MINERvA detector would no longer be needed downstream to maximise momentum sensitivity.
+MINERvA EM scintillator modules could be used to provide vetos for cosmic and rock induced particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. 
 This would enable a test of the assumption that the DUNE ND does not require a side muon tracker. 
 Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
-
-Use of the MINOS ND, in combination with an augmented MINERvA, will allow the reconstruction of the entire properties of an event within 2x2. 
-Thus, providing the most thorough calibration of the response of 2x2.  
+Use of the MINOS ND, in combination with an augmented MINERvA, will allow the reconstruction of the entire properties of an event within 2x2.
+This serves as a proxy for neutrino energy reconstruction, and provides the most thorough calibration of the response of 2x2.  
  
-\subsubsection{Use as a cosmic trigger}
