@@ -1,9 +1,14 @@
 \section{Incorporating existing detector components into ProtoDUNE-ND}
 \label{sec:MINERvA}
 
+<<<<<<< HEAD
 \todo{MINOS ND should be included to. needed for most basic ArC response. also, needs to be part of initial proposal to Steve, NOT a secondary request - From Debbie}
 
 The MINERvA experiment~\cite{minerva-nim}, which now controls and maintains the re-purposed MINOS near detector, is located in the MINOS ND hall in which ProtoDUNE-ND will be installed, and is due to complete its data-taking in spring--summer 2019. The collaboration is currently considering its detector decommissioning plan, and it has been suggested that components of these existing detectors could be repurposed for ProtoDUNE-ND. As discussed in Section~\ref{sec:protodune-nd}, all DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component. In this section, we outline the possible uses of the MINERvA detector components, and consider potential detector physics studies that they would bring to ProtoDUNE-ND.
+=======
+
+The MINERvA experiment~\cite{minerva-nim} is located in the MINOS ND hall in which ProtoDUNE-ND will be installed, and is due to complete its data-taking in spring--summer 2019. The collaboration is currently considering its detector decommissioning plan, and it has been suggested that some components of the MINERvA tracking scintillator detector could be repurposed for ProtoDUNE-ND. As discussed in Section~\ref{sec:protodune-nd}, all DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component. In this section, we outline the possible uses of the MINERvA detector components, and consider potential detector physics studies that they would bring to ProtoDUNE-ND.
+>>>>>>> d7072703f55c94d7aa287e7a41233d91c87558c8
 
 \subsection{Repurposing the MINERvA detector}
 The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purpose of the discussion in this section, we will assume that the steel shield, scintillator veto plane, helium vessel, and nuclear targets region will be removed. 
@@ -15,9 +20,9 @@ The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purp
   \label{fig:minerva_detector}
 \end{figure}
 
-The remaining central tracking region, and both the electromagnetic and hadronic calorimeters are divided into modules which consist mostly of hexagonal scintillator planes, each made of 127 triangular scintillator bars, arranged in three different orientations (60$^\circ$ rotations between each plane). There are 62 modules in the fully-active tracker region, each composed of two scintillator layers. A 15 cm border of 0.2 mm thick lead on the downstream end of each module provides electromagetic calorimetry for particles exiting the side of the tracking region.
+The remaining central tracking region, and both the electromagnetic(EM) and hadronic calorimeters are divided into modules which consist mostly of hexagonal scintillator planes, each made of 127 triangular scintillator bars, arranged in three different orientations (60$^\circ$ rotations between each plane). There are 62 modules in the fully-active tracker region, each composed of two scintillator layers. A 15 cm border of 0.2 mm thick lead on the downstream end of each module provides EM calorimetry for particles exiting the side of the tracking region.
 
-The downstream electromagnetic calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 mm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva-module}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side electromagnetic and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
+The downstream EM calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 mm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva-module}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side EM and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
 
 \begin{figure}[htb]
   \centering
@@ -27,7 +32,11 @@ The downstream electromagnetic calorimeter is composed of 10 modules, each with 
 \end{figure}
 For the studies shown in this section, a simulation was performed approximating the downstream MINERvA central tracking region with a box of scintillator, and the ArgonCube 2x2 Demonstrator module upstream of the shortened MINERvA detector. \todo{Chris M to actually describe what this is...} An example event is shown in Figure~\ref{fig:2x2+MINERvA_event}, and can be compared with 2x2 only events in Figures~\ref{fig:argonbox_event_display} and~\ref{fig:leaky_event}. Note that this simulation only included the ArgonCube cryostat and MINERvA detector components, no material was included outside these (so escaping particles simply leave without ever re-interacting). This is unlike the previously described ArgonBox simulation, where a large box of argon was simulated (so escaping particles still re-interact). Events were again distributed uniformly throughout the ArgonCube active volume.
 
+<<<<<<< HEAD
 \subsection{Repurposing MINOS near detector}
+=======
+
+>>>>>>> d7072703f55c94d7aa287e7a41233d91c87558c8
 
 We note that the configuration discussed here may not be optimal. Some of the MINERvA scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Indeed, the optimal design would also depend on whether use of the MINOS near detector as part of the ProtoDUNE-ND setup were supported. Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
 
@@ -61,5 +70,32 @@ The inclusion of MINERvA in ProtoDUNE-ND will improve the acceptance of particle
 
 \subsection{Validation of multiple coulomb scattering}
 
+<<<<<<< HEAD
 \subsubsection{Use as a cosmic trigger}
 \todo{Move some stuff from previous sections for this.}
+=======
+\subsection{Repurposing the MINOS Near Detector}
+
+\todo{the following needs expanding from notes, and making consistent with the above}
+
+The MINOS ND~\cite{MINOS_NIM} is a magnetic spectrometer formed of \SI{1}{\kilo\tonne} of steel and plastic scintillator.
+It is located \SI{2.1}{\metre} downstream of MINERvA in the NuMI beam line. 
+
+A schematic of MINOS ND is shown in Figure~\ref{fig:minos_near_detector}, it consists of 282 planes of \SI{2.54}{\centi\metre} thick steel. Only 152 planes are instrumented with scintillator. Each scintillator plane is made of \SI{1}{\centi\metre} thick  and \SI{4.1}{\centi\metre} wide strips. 
+The 120 most upstream planes form the calorimeter region, partially-instrumented scintillator planes separate steel planes, with only every fifth plane fully-instrumented. Downstream, the remaining 162 planes form the muon spectrometer, there are no partially instrumented planes and every fifth plane has full scintillator coverage. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{plots/minos.png}
+	\caption{Left: Top view of the MINOS near detector, showing the calorimeter and muon spectrometer (not to scale). Right: transverse view of a near detector plane. The shaded area shows a partially instrumented active scintillator plane and the dashed line within shows the boundary of the fiducial region. The dotted line shows the outline of a fully instrumented scintillator plane. Taken from Figure~2 of~\cite{MINOSDetectors}.}
+	\label{fig:minos_near_detector}
+\end{figure}
+
+Employing MINOS ND as a range finder will allow for the augmentation of MINERvA, since the entire MINERvA detector would no longer be needed downstream to maximise momentum sensitivity.
+MINERvA EM scintillator modules could be used to provide vetos for cosmic and rock induced particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. 
+This would enable a test of the assumption that the DUNE ND does not require a side muon tracker. 
+Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
+Use of the MINOS ND, in combination with an augmented MINERvA, will allow the reconstruction of the entire properties of an event within 2x2.
+This serves as a proxy for neutrino energy reconstruction, and provides the most thorough calibration of the response of 2x2.  
+ 
+>>>>>>> d7072703f55c94d7aa287e7a41233d91c87558c8
