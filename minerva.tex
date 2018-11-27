@@ -8,7 +8,7 @@ The MINERvA experiment~\cite{minerva-nim}, which now controls and maintains the 
 The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purpose of the discussion in this section, we will assume that the steel shield, scintillator veto plane, helium vessel, and nuclear targets region will be removed. 
 \begin{figure}[htb]
   \centering
-  \subfloat[Front view] {\includegraphics[width=0.35\textwidth]{plots/minerva_module_transverse.pdf}}
+  \subfloat[Front view] {\label{fig:minerva_detector_front}\includegraphics[width=0.35\textwidth]{plots/minerva_module_transverse.pdf}}
   \subfloat[Side view]  {\includegraphics[width=0.60\textwidth]{plots/MINERvA_schematic.pdf}}
   \caption{Schematic of the MINERvA experiment. Reproduced from Figure 1 of Ref.~\cite{minerva-nim}.}
   \label{fig:minerva_detector}
@@ -16,7 +16,7 @@ The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purp
 
 The remaining central tracking region, and both the electromagnetic(EM) and hadronic calorimeters are divided into modules which consist mostly of hexagonal scintillator planes, each made of 127 triangular scintillator bars, arranged in three different orientations (60$^\circ$ rotations between each plane). There are 62 modules in the fully-active tracker region, each composed of two scintillator layers. A 15 cm border of 0.2 mm thick lead on the downstream end of each module provides EM calorimetry for particles exiting the side of the tracking region.
 
-The downstream EM calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 mm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva-module}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side EM and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
+The downstream EM calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 mm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva_detector_front}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side EM and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
 
 \begin{figure}[htb]
   \centering
@@ -26,44 +26,63 @@ The downstream EM calorimeter is composed of 10 modules, each with two scintilla
 \end{figure}
 For the studies shown in this section, a simulation was performed approximating the downstream MINERvA central tracking region with a box of scintillator, and the ArgonCube 2x2 Demonstrator module upstream of the shortened MINERvA detector. \todo{Chris M to actually describe what this is...} An example event is shown in Figure~\ref{fig:2x2+MINERvA_event}, and can be compared with 2x2 only events in Figures~\ref{fig:argonbox_event_display} and~\ref{fig:leaky_event}. Note that this simulation only included the ArgonCube cryostat and MINERvA detector components, no material was included outside these (so escaping particles simply leave without ever re-interacting). This is unlike the previously described ArgonBox simulation, where a large box of argon was simulated (so escaping particles still re-interact). Events were again distributed uniformly throughout the ArgonCube active volume.
 
-\subsection{Repurposing MINOS near detector}
-
-We note that the configuration discussed here may not be optimal. Some of the MINERvA scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Indeed, the optimal design would also depend on whether use of the MINOS near detector as part of the ProtoDUNE-ND setup were supported. Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
-
-\subsection{Detector physics studies possible with MINERvA components}
-\todo{Add Patrick's plots here}
+In the following, we discuss potential detector physics studies, or improvements to detector physics studies previously discussed in the ArgonCube 2x2-only case (in Section~\ref{sec:detector-physics-studies}), incorporating elements of the MINERvA detector downstream of the ArgonCube 2x2 module.
 
 \subsubsection{Track matching}
-\todo{Patrick needs to do this study!}
+All DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component, downstream of the LAr ArgonCube component, and downstream of a low-density GAr TPC tracker, to tag escaping particles, photons, and possibly neutrons. There is a significant reconstruction challenge in matching the escaping tracks from the LAr component, with the signals in the scintillator, given the slow charge readout in the LAr TPC, and the high multiplicity DUNE-ND environment.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/track_mathch_multiplicity.png}
+  \caption{Matched tracks}
+  \label{fig:track_multiplicity}
+\end{figure}
+Many tracks produced in the LAr volume are not contained by the ArgonCube 2x2 module, and the majority will escape downstream. In Figure~\ref{fig:hadronic_containment}, the multiplicity of tracks which deposit charge in both the ArgonCube 2x2 module and the MINERvA component, included in the simulation described above, are shown. Full DUNE-ND events are likely to have an even higher LAr to scintillator track multiplicity due to the pile-up in the much larger 35 t ArgonCube LAr detector. But it is clear from Figure~\ref{fig:track_multiplicity} that including MINERvA elements in the ProtoDUNE-ND tests would provide useful data with which to start tackling this reconstruction problem.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/track_mathch_topo.png}
+  \caption{Correlation between tracks}
+  \label{fig:track_multiplicity_topo}
+\end{figure}
+As can be seen from the event display shown in Figure~\ref{fig:2x2+MINERvA_event}, events in which tracks escaping the 2x2 active volume may re-interact in the surrounding LAr bath before entering the MINERvA component included in this simulation, thus making the event more confusing, and difficult to assess reconstruction performance with. Figure~\ref{fig:track_multiplicity_topo} shows the multiplicity of tracks exiting the downstream face of the 2x2 active volume downstream \todo{Patrick, this is the downstream face only right?}, compared with the number of tracks entering the upstream face of the MINERvA component included in the simulation. The distribution is fairly diagonal, suggesting that althoguh complicated event topologies exist, the events will not be too confused to use for these studies. Note also that this problem could be dramatically reduced by partially instrumenting the dead region between the two detectors.
 
 \subsubsection{Acceptance studies}
 \todo{Update with higher statistics}
 
-The inclusion of MINERvA in ProtoDUNE-ND will improve the acceptance of particles for various studies, some of which were described in Section~\ref{}. Here, we show how the efficiency for contained events compares for the 2x2+MINERvA setup desribed above, with MINERvA components located downstream of the ArgonCube 2x2 Demonstrator module, and for the 2x2-only case.
+The inclusion of MINERvA in ProtoDUNE-ND will improve the acceptance of particles for various studies. Here, we show how the efficiency for contained events compares for the 2x2+MINERvA setup desribed above, with MINERvA components located downstream of the ArgonCube 2x2 Demonstrator module, and for the 2x2-only case.
+
 \begin{figure}[htb]
   \centering
   \subfloat[2x2-only]    {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/H_cont_eff_2x2.png}}
   \subfloat[2x2+MINERvA] {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/H_cont_eff_2x2_MINERvA.png}}
-  \caption{Schematic of the MINERvA experiment. Reproduced from Figure 1 of Ref.~\cite{minerva-nim}.}
+  \caption{}
   \label{fig:hadronic_containment}
 \end{figure}
+In Figure~\ref{fig:hadronic_containment}, the containment of hadron-induced showers is shown as a function of the true energy of the shower, and its angle w.r.t the incoming neutrino beam direction. Showers are defined as being contained when $\geq$90\% of the true energy of the shower is deposited inside the active 2x2 volume, or the MINERvA component if applicable. As expected, including a MINERvA component downstream of the 2x2 module increases the efficiency for angles $\theta \lesssim 30^{\circ}$, which dramatically increases the containment of high energy $E \gtrsim 0.5$ GeV hadronic showers, which tend to be forward-going.
 
 \begin{figure}[htb]
   \centering
   \subfloat[2x2-only]    {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/Pi0_cont_eff_2x2.png}}
   \subfloat[2x2+MINERvA] {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/Pi0_cont_eff_2x2_MINERvA.png}}
-  \caption{Schematic of the MINERvA experiment. Reproduced from Figure 1 of Ref.~\cite{minerva-nim}.}
+  \caption{}
   \label{fig:pi0_containment}
 \end{figure}
+As discussed previously in this note, as the 2x2 module will not be placed in a test beam prior to installation in the NuMI beam at Fermilab, measurements in which the energy scale of the 2x2 can be calibration will be vital to assess the quality of energy reconstruction in the detector. The containment of both photons from a $\pi^{0}$ decay provides an appropriate in situ measurment of the energy reconstruction capabilities. In Figure~\ref{fig:pi0_containment}, the efficiency to contain 90\% of the energy from both photon-induced showers from a $\pi^{0}$ decay within the active volume of the 2x2, or the MINERvA component if relevant, is shown as a function of the $\pi^{0}$ kinetic energy and angle w.r.t the incoming neutrino beam \todo{Patrick, check this}. There is a significant increase in efficiency for all kinetic energies above a few hundred MeV, particularly for high energy ($E_{\pi^{0}} \gtrsim 1$ GeV) pions, which are produced in the forward direction. Although the dead space between the ArconCube 2x2 active volume and the MINERvA component complicates this picture somewhat, it is clear that including a large portion of MINERvA would give much greater statistics for this benchmark test of the ArgonCube detector performance.
 
 \subsubsection{Neutron tagging studies}
+\begin{figure}[htb]
+  \centering
+  \subfloat[2x2]    {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/recoils_vs_E_proton_2x2.png}}
+  \subfloat[MINERvA] {\includegraphics[width=0.45\textwidth]{plots/2x2_minerva_plots/recoils_vs_E_proton_MINERvA.png}}
+  \caption{}
+  \label{fig:neutron_tag_minerva}
+\end{figure}
 
-\subsubsection{Validation of multiple coulomb scattering}
-
-\subsubsection{Use as a cosmic trigger}
-\todo{Move some stuff from previous sections for this.}
-
+\FloatBarrier
 \subsection{Repurposing the MINOS Near Detector}
+
+%We note that the configuration discussed here may not be optimal. Some of the MINERvA scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Indeed, the optimal design would also depend on whether use of the MINOS near detector as part of the ProtoDUNE-ND setup were supported. Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
 
 \todo{the following needs expanding from notes, and making consistent with the above}
 
@@ -86,3 +105,8 @@ This would enable a test of the assumption that the DUNE ND does not require a s
 Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
 Use of the MINOS ND, in combination with an augmented MINERvA, will allow the reconstruction of the entire properties of an event within 2x2.
 This serves as a proxy for neutrino energy reconstruction, and provides the most thorough calibration of the response of 2x2.  
+
+\subsubsection{Validation of multiple coulomb scattering}
+
+\subsubsection{Use as a cosmic trigger}
+\todo{Move some stuff from previous sections for this.}
