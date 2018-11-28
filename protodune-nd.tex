@@ -32,7 +32,7 @@ ArgonCube, and the Argoncube 2x2 Demonstrator module are described in Ref.~\cite
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.45\linewidth]{plots/cryostat.png}
+\includegraphics[width=0.45\linewidth]{plots/cryostat}
 \caption{The liquid nitrogen-cooled and vacuum-insulated cryostat that will host the ArgonCube 2x2 Demonstrator module, reproduced from Ref.~\cite{argoncube_loi}.}
 \label{fig:2x2_cryostat}
 \end{figure}
@@ -41,7 +41,7 @@ The basic principle of ArgonCube is a detector made of self-contained TPC module
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{plots/BathAndModule.png}
+\includegraphics[width=\textwidth]{plots/BathAndModule}
 \caption{Illustration of the ArgonCube 2x2 Demonstrator module. The four modules are visible, with one of them is partly extracted, on the right. This figure has been reproduced from Ref.~\cite{argoncube_loi}.}
 \label{fig:2x2_extraction}
 \end{figure}
@@ -50,7 +50,7 @@ Individual modules can be extracted or reinserted into a common LAr bath as need
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{plots/Normal-Module-4K_labelled.png}
+  \includegraphics[width=0.8\textwidth]{plots/Normal-Module-4K_labelled}
   \caption[ArgonCube module engineering drawing]{Cutaway drawing of a \SI{0.67 x 0.67 x 1.81}{\metre} ArgonCube module for the 2x2 Demonstrator module. For illustrative purposes the drawing shows traditional field shaping rings instead of a resistive field shell. Note, G10 walls will completely seal the module, isolating it from the neighbouring modules and the outer liquid argon bath.}
   \label{fig:ac_module}
 \end{figure}
@@ -66,12 +66,16 @@ During module insertion and extraction, the argon flow is controlled by hydrosta
 
 ArgonCube offers true 3D tracking information using the LArPix pixelated charge readout and cryogenic electronics~\cite{larpix}, which are used to amplify and digitize the single-pixel signals in the cold to avoid any analogue multiplexing, and produce unambiguous 3D information. Pixelated anode planes are located on the two module walls parallel to the cathode. The baseline design is for a 5 mm pixel pitch. The LArPix electronics, and a summary of their associated R\&D work, are described in Ref.~\cite{larpix}.
 
+
+
 \begin{figure}[!ht]
-\centering
-\includegraphics[width=0.75 \linewidth]{plots/1Film50x10.png}
-\caption{A prototype ArgonCube light readout paddle built at the University of Bern. The paddle is 50~cm long and 10~cm wide, with four SiPMs coupled to one end. Reproduced from Ref.~\cite{argoncube_loi}.}
-\label{fig:arclight}
+	\centering
+	\subfloat[ArCLight paddle] {\includegraphics[width=0.454\textwidth]{plots/arclight}}
+	\subfloat[ArCLight mounted on a pixel readout PCB]  {\includegraphics[width=0.51\textwidth]{plots/pixlar_arclight}}
+	\caption{(a) A prototype ArgonCube light readout paddle built at the University of Bern. The paddle is 50~cm long and 10~cm wide, with four SiPMs coupled to one end. Reproduced from Ref.~\cite{argoncube_loi}. (b) ArClight paddle mounted on the PixLAr pixelated charge readout plane, as used in test beam studies at Fermilab.}
+	\label{fig:arclight}
 \end{figure}
+
 
 With LArPix, the reconstruction issues in a high rate environment are drastically simplified with respect to traditional projective wire readout TPCs. However, the charge readout window (drift time) is \SI{137}{\micro\second} and the beam spill is only \SI{10}{\micro\second}~\cite{numi}, so to correctly reconstruct events overlapping in this window, scintillation signals need to be correctly matched to charge signals (flash matching). If these are correctly matched, the prompt scintillation light defines the time at which ionization electrons start to drift, and the time it takes to register charge on the anode plane along with the electric field strength allow give you enough information to reconstruct the third spatial co-ordinate (along the drift direction). In a modular detector, this problem can easily be simplified using an opaque cathode and module walls, which contains scintillation light in each TPC (half module), and effectively reduce the event pile-up. Furthermore, attenuation due to Rayleigh scattering, $6.6\times10^{-1}$~m~\cite{Rayleigh}, is much less of a problem than in large monolithic detectors given maximum photon propagation lengths of only \SI{0.3}{\metre}. It is desirable to have a large area photon detection system to maximize the utility of scintillation light signals in the detector. However, the downside to modularization is the dead regions between adjacent TPCs, which introduce gaps in the reconstruction, so any light detection system must be compact. The solution pursued for the ArgonCube effort is ArCLight~\cite{arclight}, which is a very compact dielectric light trap that allows for light collection from a large area, inside high electric fields. An example ArCLight sheet is shown in Figure~\ref{fig:arclight}. These sheets are mounted on the walls of the module, inside the field shell, aligned with the drift direction, between the anode and the cathode. The additional dead volume of a few \si{\milli\metre} is similar to the one caused by the charge readout in the perpendicular direction.
 
