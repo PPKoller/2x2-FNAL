@@ -47,12 +47,14 @@ The basic principle of ArgonCube is a detector made of self-contained TPC module
 \label{fig:2x2_extraction}
 \end{figure}
 
-Individual modules can be extracted or reinserted into a common LAr bath as needed, as is illustrated in Figure~\ref{fig:2x2_extraction}, however this feature will not be demonstrated in the MINOS-ND hall. Pressure inside the modules is kept close to the bath pressure putting almost no hydrostatic force on the module walls, which allows them to be thin, to minimize the inactive material in the walls. The purity of the LAr is maintained within each module independently, as will be described below. As a result, the argon surrounding the modules needs not meet as stringent purity requirements as the argon inside. Under normal operation conditions all modules are inserted with only clearance distances of \SI{1.5}{\milli\metre} between modules. Cooling power to the bath is supplied by LN2 circulated through lines on the outer surface of the inner cryostat vessel.
+Individual modules can be extracted or reinserted into a common LAr bath as needed, as is illustrated in Figure~\ref{fig:2x2_extraction}, however this feature will not be demonstrated in the MINOS-ND hall\todo{in that case, should we show this figure??}. Pressure inside the modules is kept close to the bath pressure putting almost no hydrostatic force on the module walls, which allows them to be thin, to minimize the inactive material in the walls. The purity of the LAr is maintained within each module independently, as will be described below. As a result, the argon surrounding the modules needs not meet as stringent purity requirements as the argon inside. Under normal operation conditions all modules are inserted with only clearance distances of \SI{1.5}{\milli\metre} between modules. Cooling power to the bath is supplied by LN2 circulated through lines on the outer surface of the inner cryostat vessel.
+
+\todo{paragraph on module constriction. detail of active volume and dead material (7\% in ND, what is it in 2x2??) }
 
 \begin{figure}[tbp]
   \centering
   \includegraphics[width=0.8\textwidth]{plots/Normal-Module-4K_labelled}
-  \caption[ArgonCube module engineering drawing]{Cutaway drawing of a \SI{0.67 x 0.67 x 1.81}{\metre} ArgonCube module for the 2x2 Demonstrator module. For illustrative purposes the drawing shows traditional field shaping rings instead of a resistive field shell. Note, G10 walls will completely seal the module, isolating it from the neighbouring modules and the outer liquid argon bath.}
+  \caption[ArgonCube module engineering drawing]{Cutaway drawing of a \SI{0.67 x 0.67 x 1.81}{\metre} ArgonCube module for the 2x2 Demonstrator module. For illustrative purposes the drawing shows traditional field shaping rings instead of a resistive field shell. Note, G10 walls will completely seal the module, isolating it from the neighbouring modules and the outer liquid argon bath.\todo{change this for an actual engineering drawing!}}
   \label{fig:ac_module}
 \end{figure}
 
@@ -71,9 +73,7 @@ During filling and emptying of the cryostat, the argon flow is controlled by hyd
 	\label{fig:cryo_scheme}
 \end{figure}
 
-ArgonCube offers true 3D tracking information using the LArPix pixelated charge readout and cryogenic electronics~\cite{larpix}, which are used to amplify and digitize the single-pixel signals in the cold to avoid any analogue multiplexing, and produce unambiguous 3D information. Pixelated anode planes are located on the two module walls parallel to the cathode. The baseline design is for a 5 mm pixel pitch. The LArPix electronics, and a summary of their associated R\&D work, are described in Ref.~\cite{larpix}.
-
-
+ArgonCube offers true 3D tracking information using the LArPix pixelated charge readout and cryogenic electronics~\cite{larpix}, which are used to amplify and digitize the single-pixel signals in the cold to mitigate the need for analogue signal multiplexing, and produce unambiguous 3D information. Pixelated anode planes are located on the two module walls parallel to the cathode. The baseline design is for a 5 mm pixel pitch. The LArPix electronics, and a summary of their associated R\&D work, are described in Ref.~\cite{larpix}.\todo{DAQ scheme, PCB tile size and number,number of channels, expected data rate, expected power consumption,}
 
 \begin{figure}[!ht]
 	\centering
@@ -88,7 +88,12 @@ With LArPix, the reconstruction issues in a high rate environment are drasticall
 
 
 \todo{James, can you comment on the 2x2 needs from the external infrastructure point of view?}
+Make comparable with Ting's document(Stevie B has seen this, so this section really needs to match that!!)
+
+
 HV
+charge daq needs - take from the cm sept 18 slides  
+how many crt febs??
 The four modules each require a filtered High Voltage (HV) supply of \SI{30}{\kilo\volt}. This can be provided by a single external supply and a splitter, where the splitter also serves as a filter.
 The light and charge readout electronics require a clean power source, this can be achieved with a dedicated clean supply, or operation via a UPS or some other kind of filter. 
 
