@@ -82,7 +82,6 @@ As discussed previously in this note, as the 2x2 module will not be placed in a 
 As discussed in Section~\ref{sec:2x2_neutron}, one key detector physics goal with ProtoDUNE-ND is determine whether neutron-induced proton recoils can be identified in a LAr TPC, specifically in ArgonCube. MINERvA has a well understood neutron response, with a threshold of $\sim$20 MeV, and would provide a valuable benchmark through which the neutron-response of the ArgonCube 2x2 module could be tested. Additionally, with vertices in both the 2x2 and in MINERvA, it would be interesting to see how well the timing resolution of ArCLight would be able to associate neutrons with vertices in the TPC or outside it, which would provide valuable information about potential out of fiducial volume neutron rejection. In the final DUNE ND design, there will be many neutrons produced in the cavern around the detector, and being able to efficiently reject those will dictact how useful the neutron response will be for assessing the energy response of the detector.
 \todo{Patrick, James, please make this less shit...}
 
-
 \FloatBarrier
 \subsection{Repurposing the MINOS Near Detector}
 
@@ -90,12 +89,7 @@ As discussed in Section~\ref{sec:2x2_neutron}, one key detector physics goal wit
 
 \todo{the following needs expanding from notes, and making consistent with the above}
 
-The MINOS ND~\cite{MINOS_NIM} is a magnetic spectrometer formed of \SI{1}{\kilo\tonne} of steel and plastic scintillator.
-It is located \SI{2.1}{\metre} downstream of MINERvA in the NuMI beam line. 
-
-A schematic of MINOS ND is shown in Figure~\ref{fig:minos_near_detector}, it consists of 282 planes of \SI{2.54}{\centi\metre} thick steel. Only 152 planes are instrumented with scintillator. Each scintillator plane is made of \SI{1}{\centi\metre} thick  and \SI{4.1}{\centi\metre} wide strips. 
-The 120 most upstream planes form the calorimeter region, partially-instrumented scintillator planes separate steel planes, with only every fifth plane fully-instrumented. Downstream, the remaining 162 planes form the muon spectrometer, there are no partially instrumented planes and every fifth plane has full scintillator coverage. 
-
+The MINOS ND~\cite{MINOS_NIM} is a magnetic spectrometer formed of \SI{1}{\kilo\tonne} of steel and plastic scintillator. It is located \SI{2.1}{\metre} downstream of MINERvA in the NuMI beam line, and is now controlled by the MINERvA collaboration, and maintained with Fermilab. A schematic of MINOS ND is shown in Figure~\ref{fig:minos_near_detector}, it consists of 282 planes of \SI{2.54}{\centi\metre} thick steel. Only 152 planes are instrumented with scintillator. Each scintillator plane is made of \SI{1}{\centi\metre} thick  and \SI{4.1}{\centi\metre} wide strips. The 120 most upstream planes form the calorimeter region, partially-instrumented scintillator planes separate steel planes, with only every fifth plane fully-instrumented. Downstream, the remaining 162 planes form the muon spectrometer, there are no partially instrumented planes and every fifth plane has full scintillator coverage. 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.9\textwidth]{plots/minos.png}
@@ -103,14 +97,17 @@ The 120 most upstream planes form the calorimeter region, partially-instrumented
 	\label{fig:minos_near_detector}
 \end{figure}
 
-Employing MINOS ND as a range finder will allow for the augmentation of MINERvA, since the entire MINERvA detector would no longer be needed downstream to maximise momentum sensitivity.
-MINERvA EM scintillator modules could be used to provide vetos for cosmic and rock induced particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. 
-This would enable a test of the assumption that the DUNE ND does not require a side muon tracker. 
-Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
-Use of the MINOS ND, in combination with an augmented MINERvA, will allow the reconstruction of the entire properties of an event within 2x2.
-This serves as a proxy for neutrino energy reconstruction, and provides the most thorough calibration of the response of 2x2.  
+As the majority of muons are not contained within the MINERvA volume, and mostly exit downstream, MINERvA currently employ MINOS as a muon spectrometer. Similarly, for ProtoDUNE-ND, the majority of particles will not be contained in the ArgonCube 2x2 volume. Even if MINERvA components are placed downstream of the 2x2 module, the majority of muons will not be contained, making ancilliary physics measurements with ProtoDUNE-ND extremely challenging. Employing MINOS ND as a range finder for ProtoDUNE-ND would allow the muon momentum to be measured, and would allow ProtoDUNE-ND to make much more DUNE-ND-like measurements. If MINOS-ND were to be included downstream, of the MINERvA component, it would also make sense to deploy portions of the MINERvA detector around the ArgonCube cryostat, since the entire MINERvA detector would no longer be needed downstream to maximise momentum sensitivity, making it much easier to tag escaping particles, and to identify through-going cosmics (as alluded to in Section~\ref{sec:cosmic-suppression}), which would make is much easier to calibrate the energy scale in the detector. MINERvA EM scintillator modules could be used to provide vetos for cosmic and rock induced particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Ultimately, this would enable a test of the assumption that the DUNE ND does not require a side muon tracker.
+
+Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies. Use of the MINOS ND, in combination with an augmented MINERvA, would allow the reconstruction of the entire properties of an event which occurred in the ArgonCube 2x2 volume. This serves as a proxy for neutrino energy reconstruction, as it would in the full DUNE-ND, and would provide the most thorough calibration of the response of 2x2 possible --- vital, as there are no plans to calibrate the response in a test beam before installation in the MINOS-ND hall at Fermilab.
+\todo{James, I fleshed out the above a little, but I'm not sure what quantitative studies we can put below...}
 
 \subsubsection{Validation of multiple coulomb scattering}
+\todo{Do we need the MINOS magnet on? Can do a range measurement without.}
 
 \subsubsection{Use as a cosmic trigger}
 \todo{Move some stuff from previous sections for this.}
+
+
+\subsection{MINERvA/MINOS running costs}
+\todo{Add some comments from Dan R. + Debbie.}
