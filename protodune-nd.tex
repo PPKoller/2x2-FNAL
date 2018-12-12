@@ -10,7 +10,7 @@ The LBNF beamline is an intense source of muon (anti-)neutrinos, with a much hig
   \centering
   \subfloat[Flux\label{subfig:flux}]    {\includegraphics[width=0.5\textwidth]{plots/fnal_flux_comparison.png}}
   \subfloat[Rate\label{subfig:rate}]    {\includegraphics[width=0.5\textwidth]{plots/2x2_Enu_all.png}}
-  \caption{Comparison of the absolutely normalized fluxes for different neutrino beamlines at Fermilab, and the expected yearly rates in the ArgonCube 2x2 Demonstrator module's 1.7t active LAr volume as a function of \enu, produced using GENIE v2.12.10 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}.}
+  \caption{Comparison of the absolutely normalized fluxes for different neutrino beamlines at Fermilab, and the expected yearly rates in the ArgonCube 2x2 Demonstrator module's 1.7t active LAr volume as a function of \enu, produced using GENIE v2.12.10 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}.\todo{POT??}}
   \label{fig:beam_options}
 \end{figure}
 
@@ -62,7 +62,7 @@ The module is split into two TPCs by a central cathode made of an additional res
 
 The detector is oriented such that the cathodes are parallel to the beam. This minimizes the load on the readout electronics by spreading the event over more channels and reducing the required digitization rate for hit channels. In turn, this reduces the heat load generated at the charge readout and prevents localized boiling.
 
-During filling and emptying of the cryostat, the argon flow is controlled by hydrostatic check valves located at the lower flange of the module, which require a minimal differential pressure of \SI{15}{\milli\bar} to open\todo{cite, or foot note of valve specs}. Purity inside each module is maintained by means of continuous LAr recirculation through oxygen traps. Dirty argon extracted from the base of the module and then pushed through the oxygen traps outside the cryostat, clean argon then re-enters the module above the active volume. For optimal heat transport the argon flow is directed along the cold electronics. To prevent dirty argon from the bath entering the modules their interior is held at a slight overpressure. For the 2x2 the dirty argon from all four modules is extracted by a single pump and with a four-to-one line at the base of the cryostat, after being filtered and cooled, the clean argon is pumped back in the module via a one to one-to-four line, this scheme is shown in Figure~\ref{fig:cryo_scheme}. A more extensive version of the same scheme is envisaged for the DUNE-ND.  
+During filling and emptying of the cryostat, the argon flow is controlled by hydrostatic check valves located at the lower flange of the module, which require a minimal differential pressure of \SI{15}{\milli\bar} to open. Purity inside each module is maintained by means of continuous LAr recirculation through oxygen traps. Dirty argon extracted from the base of the module and then pushed through the oxygen traps outside the cryostat, clean argon then re-enters the module above the active volume. For optimal heat transport the argon flow is directed along the cold electronics. To prevent dirty argon from the bath entering the modules their interior is held at a slight overpressure. For the 2x2 the dirty argon from all four modules is extracted by a single pump and with a four-to-one line at the base of the cryostat, after being filtered and cooled, the clean argon is pumped back in the module via a one to one-to-four line, this scheme is shown in Figure~\ref{fig:cryo_scheme}. A more extensive version of the same scheme is envisaged for the DUNE-ND.  
 
 \begin{figure}[tbp]
 	\centering
@@ -81,8 +81,21 @@ ArgonCube offers true 3D tracking information using the LArPix cryogenic ASIC~\c
 	\label{fig:arclight}
 \end{figure}
 
+The charge readout window (drift time) of \SI{137}{\micro\second} is long compared to the \SI{10}{\micro\second}~\cite{numi} beam spill length in the NuMI and LBNF beams.
+For 1 MW beam intensity, the expected rate of neutrino interactions at the DUNE ND is roughly 0.5 per spill per ArgonCube module.  
+With LArPix, reconstruction issues are greatly simplified compared to a projective readout TPC.
+Tracks and connected energy deposits will frequently overlap in any 2D projection, but can be easily resolved with a full 3D readout.
+However, disconnected energy deposits, such as those from photon conversions or neutron interactions in the detector, cannot easily be associated to a specific neutrino interaction.
+This problem can be solved by incorporating fast timing information from the prompt scintillation light emitted in LAr.
+The module's opaque cathode and walls contain scintillation light within each TPC (half module), improving the detection efficiency of the prompt component of the scintillation light. 
+Furthermore, attenuation due to Rayleigh scattering, $6.6\times10^{-1}$~m~\cite{Rayleigh}, is mitigated by the maximum photon propagation lengths of only \SI{0.3}{\metre}. 
+It is desirable to have a large area photon detection system to maximize the utility of scintillation light signals in the detector. 
+To minimise any dead material within the active volume, it is also desirable that the light detection be compact as compact as possible. 
+The solution pursued for the ArgonCube effort is ArCLight~\cite{arclight}, which is a very compact dielectric light trap that allows for light collection from a large area, inside high electric fields. 
+An example ArCLight sheet is shown in Figure~\ref{fig:arclight}. These sheets are mounted on the walls of the module, inside the field shell, aligned with the drift direction, between the anode and the cathode. 
+The additional dead volume of a few \si{\milli\metre} is similar to the one caused by the charge readout in the perpendicular direction.
 
-With LArPix, the reconstruction issues in a high rate environment are drastically simplified with respect to traditional projective wire readout TPCs. However, the charge readout window (drift time) is \SI{137}{\micro\second} and the beam spill is only \SI{10}{\micro\second}~\cite{numi}, so to correctly reconstruct events overlapping in this window, scintillation signals need to be correctly matched to charge signals (flash matching). If these are correctly matched, the prompt scintillation light defines the time at which ionization electrons start to drift, and the time it takes to register charge on the anode plane along with the electric field strength allow give you enough information to reconstruct the third spatial co-ordinate (along the drift direction). In a modular detector, this problem can easily be simplified using an opaque cathode and module walls, which contains scintillation light in each TPC (half module), and effectively reduce the event pile-up. Furthermore, attenuation due to Rayleigh scattering, $6.6\times10^{-1}$~m~\cite{Rayleigh}, is much less of a problem than in large monolithic detectors given maximum photon propagation lengths of only \SI{0.3}{\metre}. It is desirable to have a large area photon detection system to maximize the utility of scintillation light signals in the detector. However, the downside to modularization is the dead regions between adjacent TPCs, which introduce gaps in the reconstruction, so any light detection system must be compact. The solution pursued for the ArgonCube effort is ArCLight~\cite{arclight}, which is a very compact dielectric light trap that allows for light collection from a large area, inside high electric fields. An example ArCLight sheet is shown in Figure~\ref{fig:arclight}. These sheets are mounted on the walls of the module, inside the field shell, aligned with the drift direction, between the anode and the cathode. The additional dead volume of a few \si{\milli\metre} is similar to the one caused by the charge readout in the perpendicular direction.
+
 
 
 \todo{James, can you comment on the 2x2 needs from the external infrastructure point of view?}
