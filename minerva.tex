@@ -1,6 +1,6 @@
 \section{Incorporating existing detector components into ProtoDUNE-ND}
 \label{sec:MINERvA}
-\todo{MINOS ND should be included to. needed for most basic ArC response. also, needs to be part of initial proposal to Steve, NOT a secondary request - From Debbie}
+%\todo{MINOS ND should be included to. needed for most basic ArC response. also, needs to be part of initial proposal to Steve, NOT a secondary request - From Debbie}
 
 The MINERvA experiment~\cite{minerva-nim}, which now controls and maintains the re-purposed MINOS near detector, is located in the MINOS ND hall in which ProtoDUNE-ND will be installed, and is due to complete its data-taking in spring--summer 2019. The collaboration is currently considering its detector decommissioning plan, and it has been suggested that components of these existing detectors could be repurposed for ProtoDUNE-ND. As discussed in Section~\ref{sec:protodune-nd}, all DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component. In this section, we outline the possible uses of the MINERvA detector components, and consider potential detector physics studies that they would bring to ProtoDUNE-ND.
 
@@ -49,8 +49,7 @@ Many tracks produced in the LAr volume are not contained by the ArgonCube 2x2 mo
 As can be seen from the event display shown in Figure~\ref{fig:2x2+MINERvA_event}, events in which tracks escaping the 2x2 active volume may re-interact in the surrounding LAr bath before entering the MINERvA component included in this simulation, thus making the event more confusing, and difficult to assess reconstruction performance with. Figure~\ref{fig:track_multiplicity_topo} shows the multiplicity of tracks exiting the downstream face of the 2x2 active volume downstream \todo{Patrick, this is the downstream face only right?}, compared with the number of tracks entering the upstream face of the MINERvA component included in the simulation. The distribution is fairly diagonal, suggesting that althoguh complicated event topologies exist, the events will not be too confused to use for these studies. Note also that this problem could be dramatically reduced by partially instrumenting the dead region between the two detectors.
 
 \subsubsection{Acceptance studies}
-\todo{Update with higher statistics}
-
+\label{sec:minerva-acceptance}
 The inclusion of MINERvA in ProtoDUNE-ND will improve the acceptance of particles for various studies. Here, we show how the efficiency for contained events compares for the 2x2+MINERvA setup desribed above, with MINERvA components located downstream of the ArgonCube 2x2 Demonstrator module, and for the 2x2-only case.
 
 \begin{figure}[htb]
@@ -86,8 +85,6 @@ As discussed in Section~\ref{sec:2x2_neutron}, one key detector physics goal wit
 \FloatBarrier
 \subsection{Repurposing the MINOS Near Detector}
 
-%We note that the configuration discussed here may not be optimal. Some of the MINERvA scintillator modules could be used to provide vetos for particles entering or exiting the 2x2 cryostat, or to contain side-escaping showers. Indeed, the optimal design would also depend on whether use of the MINOS near detector as part of the ProtoDUNE-ND setup were supported. Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies.
-
 \todo{the following needs expanding from notes, and making consistent with the above}
 
 The MINOS ND~\cite{MINOS_NIM} is a magnetic spectrometer formed of \SI{1}{\kilo\tonne} of steel and plastic scintillator. It is located \SI{2.1}{\metre} downstream of MINERvA in the NuMI beam line, and is now controlled by the MINERvA collaboration, and maintained with Fermilab. A schematic of MINOS ND is shown in Figure~\ref{fig:minos_near_detector}, it consists of 282 planes of \SI{2.54}{\centi\metre} thick steel. Only 152 planes are instrumented with scintillator. Each scintillator plane is made of \SI{1}{\centi\metre} thick  and \SI{4.1}{\centi\metre} wide strips. The 120 most upstream planes form the calorimeter region, partially-instrumented scintillator planes separate steel planes, with only every fifth plane fully-instrumented. Downstream, the remaining 162 planes form the muon spectrometer, there are no partially instrumented planes and every fifth plane has full scintillator coverage. 
@@ -103,14 +100,12 @@ As the majority of muons are not contained within the MINERvA volume, and mostly
 Here we discuss such possibilities in brief, and will wait to discover the viability of this project before embarking on more detailed studies. Use of the MINOS ND, in combination with an augmented MINERvA, would allow the reconstruction of the entire properties of an event which occurred in the ArgonCube 2x2 volume. This serves as a proxy for neutrino energy reconstruction, as it would in the full DUNE-ND, and would provide the most thorough calibration of the response of 2x2 possible --- vital, as there are no plans to calibrate the response in a test beam before installation in the MINOS-ND hall at Fermilab.
 
 \subsubsection{Validation of multiple coulomb scattering}
-
 Although the DUNE ND will have a downstream tracking detector with which to precisely measure the momentum of muons which exit downstream of the detector, this is unlikely to cover the full angular acceptance at the far detector (FD), particularly not if a sample of events in which the muon exists, and the FD momentum measurement is by multiple-coulomb scattering, and not by range. As such, it will be necessary to use ND events with muons which exit the sides of the upstream ArgonCube LAr component, and use multiple-coulomb scattering to measure their momentum. Such measurements have been carried out in a LAr TPC by MicroBooNE~\cite{Abratenko:2017nki}, although the momentum range is somewhat limited as the only validation sample available is composed of muons which stop in the detector, for which a momentum by range measurement can be made. However, such measurements may be more challenging in a modular TPC such as ArgonCube, where tracks are necessarily broken into segments which are read out separately, and then combined in downstream software.
 
 Although there are only four modules in the ArgonCube 2x2 demonstrator, each is split into two TPCs, so tracks which exit the downstream face of the 2x2 module may be sampled by up to four independent charge readout planes. With a downstream detector capable of making a precise muon momentum measurement, it would be possible to demonstrate that multiple coulomb scattering will be a viable technique for making momentum measurements in the full ArgonCube deployment in the DUNE ND. Given the hard muon momentum spectrum expected in the NuMI on-axis beam (shown in Figure~\ref{fig:momenta}), it would be hard to make a reliable momentum measurement with a small demonstrator tracker module, or indeed with the MINERvA components proposed in Section~\ref{sec:minerva}, as few would be contained. Such measurements could be made, in the MINOS-ND, which is capable of making momentum measurements for all relevant muon momenta by curvature, or by range.
 
-\subsubsection{Use as a cosmic trigger}
-\todo{Move some stuff from previous sections for this.}
-
+\subsubsection{Use of MINERvA as a cosmic trigger}
+In the discussion in Section~\ref{sec:MINERvA}, the detector setup maximizes the amount of the MINERvA detector repurposed downstream of the ArgonCube 2x2 module, in order to increase containment in the very forward region, where most particles go. However, if MINOS-ND is also included as part of the ProtoDUNE-ND setup, this imperative is no longer there, and less of MINERvA would be needed downstream. In this case, MINERvA modules could be redeployed to the sides of, and even above, the 2x2 cryostat to act as a cosmic ray tagger, and to tag escaping particles. In practice, these panels could be used to better identify a sample of fully contained neutrino events for the studies outlined in Sections~\ref{sec:minerva-acceptance}. Additionally, these cosmic ray tagging modules could then be used to validate space charge build-up and electric field uniformity studies outlined in Section~\ref{sec:efield}, and the cosmic suppression studies described in Section~\ref{sec:cosmic-suppression}, for which an additional scintillator panel would be required.
 
 \subsection{MINERvA/MINOS running costs}
 \todo{Add some comments from Dan R. + Debbie.}
