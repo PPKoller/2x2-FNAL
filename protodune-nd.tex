@@ -62,7 +62,7 @@ The module is split into two TPCs by a central cathode made of an additional res
 
 The detector is oriented such that the cathodes are parallel to the beam. This minimizes the load on the readout electronics by spreading the event over more channels and reducing the required digitization rate for hit channels. In turn, this reduces the heat load generated at the charge readout and prevents localized boiling.
 
-During filling and emptying of the cryostat, the argon flow is controlled by hydrostatic check valves located at the lower flange of the module, which require a minimal differential pressure of \SI{15}{\milli\bar} to open. Purity inside each module is maintained by means of continuous LAr recirculation through oxygen traps. Dirty argon extracted from the base of the module and then pushed through the oxygen traps outside the cryostat, clean argon then re-enters the module above the active volume. For optimal heat transport the argon flow is directed along the cold electronics. To prevent dirty argon from the bath entering the modules their interior is held at a slight overpressure. For the 2x2 the dirty argon from all four modules is extracted by a single pump and with a four-to-one line at the base of the cryostat, after being filtered and cooled, the clean argon is pumped back in the module via a one to one-to-four line, this scheme is shown in Figure~\ref{fig:cryo_scheme}. A more extensive version of the same scheme is envisaged for the DUNE-ND.  
+During filling and emptying of the cryostat, the argon flow is controlled by hydrostatic check valves located at the lower flange of the module, which require a minimal differential pressure of \SI{15}{\milli\bar} to open. Purity inside each module is maintained by means of continuous LAr recirculation through oxygen traps. Dirty argon extracted from the base of the module and then pushed through the oxygen traps outside the cryostat, clean argon then re-enters the module above the active volume. For optimal heat transport the argon flow is directed along the cold electronics. To prevent dirty argon from the bath entering the modules their interior is held at a slight overpressure. For the 2x2, the dirty argon from all four modules is extracted by a single pump and with a four-to-one line at the base of the cryostat, after being filtered and cooled, the clean argon is pumped back in the module via a one-to-four line, this scheme is shown in Figure~\ref{fig:cryo_scheme}. A more extensive version of the same scheme is envisaged for the DUNE-ND.  
 
 \begin{figure}[tbp]
 	\centering
@@ -97,7 +97,16 @@ The additional dead volume of a few \si{\milli\metre} is similar to the one caus
 
 
 
+The infrastructure requirements for 2x2 are as follows:
 
+qualitative not quantitative
+
+
+conservative estimate of the cooling requirements of the 2x2 are \SI{2}{\kilo\watt} of cooling 
+
+The cooling is provided by LN2, 
+
+ 
 \todo{James, can you comment on the 2x2 needs from the external infrastructure point of view?}
 Make comparable with Ting's document(Stevie B has seen this, so this section really needs to match that!!)
 
@@ -113,7 +122,7 @@ The light and charge readout electronics require a clean power source, this can 
 
 \subsection{Downstream tracking detectors}
 \label{sec:tracking_detectors}
-As well as an ArgonCube-like LAr component, the recommendations from the DUNE Near Detector Concept Study Group~\cite{dune_ndcsg} are for there to be additional, downstream tracking detectors in the DUNE ND to tag and measure the energies of particles which exit the downstream face of the LAr detector, and a magnetized component to identify the sign of muons (and other particles). It would therefore enhance the utility of ProtoDUNE-ND, as an intermediate-scale test of the DUNE ND, to include prototypes for these detectors. It would also enhance any additional possible physics outputs from ProtoDUNE-ND, as many events in the high-energy NuMI ME beamline will not be fully contained in the ArgonCube 2x2 Demonstrator module (examples can be seen in Figures~\ref{fig:argonbox_event_display} and~\ref{fig:leaky_event}). Two downstream tracking options considered  by the DUNE Near Detector Concept Study Group are the Three Dimensional Scintillator Tracker (3DST), and the High-Pressure gaseous argon TPC (HPgTPC).
+As well as an ArgonCube-like LAr component, the recommendations from the DUNE Near Detector Concept Study Group~\cite{dune_ndcsg} are for there to be additional, downstream tracking detectors in the DUNE ND to tag and measure the energies of particles which exit the downstream face of the LAr detector, and a magnetized component to identify the sign of muons. It would therefore enhance the utility of ProtoDUNE-ND, as an intermediate-scale test of the DUNE ND, to include prototypes for these detectors. It would also enhance any additional possible physics outputs from ProtoDUNE-ND, as many events in the high-energy NuMI ME beamline will not be fully contained in the ArgonCube 2x2 Demonstrator module (examples can be seen in Figures~\ref{fig:argonbox_event_display} and~\ref{fig:leaky_event}). Two downstream tracking options considered  by the DUNE Near Detector Concept Study Group are the Three Dimensional Scintillator Tracker (3DST), and the High-Pressure gaseous argon TPC (HPgTPC).
 
 The 3DST is a fully active plastic scintillator detector made of a large number of optically independent 1x1x1 cm$^{3}$ cubes read out in three orthogonal directions by wavelength shifting fibers~\cite{3dst}. The 3DST is envisioned as an upgrade to the plastic scintillator detectors read out in two dimensions used by T2K~\cite{t2k-fgd,t2k-ingrid}, NOvA~\cite{nova} and MINERvA~\cite{minerva-nim}, which will provide better angular resolution. Unfortunately, after consultation with the 3DST steering group, it was found that a large scale prototype suitable for ProtoDUNE-ND will not be available on the required timescale. If the situation changes, we note the desirability of including such a prototype in the proposed ProtoDUNE-ND effort.
 
