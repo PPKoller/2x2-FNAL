@@ -1,4 +1,5 @@
-\documentclass[aps,prd,preprint,superscriptaddress,nofootinbib]{revtex4-1}
+\documentclass[a4paper]{article}
+%\documentclass[aps,prd,preprint,superscriptaddress,nofootinbib]{revtex4-1}
 \pdfoutput=1
 \linespread{1}
 \usepackage[T1]{fontenc}
@@ -21,10 +22,17 @@
 \usepackage{bm}% bold math
 \usepackage{soul}
 %\usepackage{makecell}
+
+\usepackage[utf8]{inputenc} % utf8 support in source code
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage[autostyle]{csquotes} % recommended by biblatex
+\usepackage{xpatch} % recommended by biblatex
+\usepackage[backend=biber, giveninits, sorting=none, style=numeric-comp]{biblatex} % much more flexible than BibTeX
+\addbibresource{bibliography.bib}
+
 \usepackage{siunitx}
 \sisetup{separate-uncertainty=true}
-\DeclareSIUnit\radlen{\text{\ensuremath{X_{\mathrm{0}}}}}
-\DeclareSIUnit\clight{\text{\ensuremath{c}}} % remove 0 subscript from speed of light
 
 \newcommand{\todo}[1]{{\color{red} (To Do: #1)}}
 \newcommand{\blue}[1]{\textcolor{NALblue}{#1}}
@@ -36,23 +44,159 @@
 
 \begin{document}
 
-\title{ProtoDUNE-ND: proposal to place the ArgonCube 2x2 Demonstrator module in a neutrino beamline at Fermilab}
 
-\author{ArgonCube Collaboration}
-
-\date{\today}
+\begin{center}
+		
+	{\Large \bf ProtoDUNE-ND: proposal to place the ArgonCube 2x2 Demonstrator module in a neutrino beamline at Fermilab} 
+	\vspace*{0.5cm}
+	\setcounter{footnote}{0}  
+	\def\A{\kern+.6ex\lower.42ex\hbox{$\scriptstyle \iota$}\kern-1.20ex a}
+	\def\E{\kern+.5ex\lower.42ex\hbox{$\scriptstyle \iota$}\kern-1.10ex e}
+	\small
+	\newcommand{\Aname}[2]{#1}
+	\def\titlefoot#1{\vspace{-0.3cm}\begin{center}{\bf #1}\end{center}}
+	
+	\Aname{M.~Auger}{Bern},
+	\Aname{R.~Berner}{Bern},
+	\Aname{Y.~Chen}{Bern},
+	\Aname{A.~Ereditato}{Bern},
+	\Aname{P.~P.~Koller}{Bern},
+	\Aname{I.~Kreslo}{Bern},
+	\Aname{D.~Lorca}{Bern},
+	\Aname{T.~Mettler}{Bern},
+	\Aname{F.~Piastra}{Bern},
+	\Aname{J.~R.~Sinclair\footnote{Corresponding author: james.sinclair@lhep.unibe.ch}}{Bern},
+	\Aname{M.~Weber}{Bern}, and
+	\Aname{C.~Wilkinson\footnote{Corresponding author: callum.wilkinson@lhep.unibe.ch}}{Bern}
+	\titlefoot{Albert Einstein Center for Fundamental Physics (AEC), Laboratory for High Energy Physics, University of Bern, 3012 Bern, Switzerland\label{Bern}}
+	
+	\Aname{M.~Bishai}{BNL},
+	\Aname{H.~Chen}{BNL},
+	\Aname{M.~Diwan}{BNL},
+	\Aname{F.~Lanni}{BNL},
+	\Aname{Y.~Li}{BNL},
+	\Aname{D.~Lissauer}{BNL},
+	\Aname{X.~Qian}{BNL},
+	\Aname{V.~Radeka}{BNL}, and
+	\Aname{B.~Yu}{BNL}
+	\titlefoot{Brookhaven National Laboratory (BNL), Upton, NY 11973-5000, USA\label{BNL}}
+	
+	\Aname{M.~Mooney}{Colorado}
+	\titlefoot{Colorado State University, Fort Collins, CO 80523, USA\label{colorado}}
+	
+	\Aname{A.~Bross}{FNAL},
+	\Aname{L.~Fields}{FNAL},
+	\Aname{D.~A.~Harris}{FNAL},
+	\Aname{A.~Marchionni}{FNAL},
+	\Aname{T.~Miao}{FNAL},
+	\Aname{O.~Palamara}{FNAL},
+	\Aname{J.~L.~Raaf}{FNAL},
+	\Aname{G.~P.~Zeller}{FNAL}, and
+	\Aname{J.~Zennamo}{FNAL}
+	\titlefoot{Fermi National Accelerator Laboratory (FNAL), Batavia, IL 60510 USA\label{FNAL}}
+	
+	\Aname{R.~Guenette}{Harvard}, and
+	\Aname{J.~Martin-Albo}{Harvard}
+	\titlefoot{Harvard University, Cambridge, MA 02138, USA\label{Harvard}}
+	
+	\Aname{C.~Azevedo}{I3N},
+	\Aname{A.~L.~Silva}{I3N}, and
+	\Aname{J.~Veloso}{I3N}
+	\titlefoot{I3N, Physics Department, University of Aveiro, 3810-193 Aveiro, Portugal\label{I3N}}
+	
+	\Aname{N.~Anfimov}{dubna},
+	\Aname{A.~Olshevskiy}{dubna},
+	\Aname{A.~Selyunin}{dubna},
+	\Aname{S.~Sokolov}{dubna}, and
+	\Aname{A.~Sotnikov}{dubna}
+	\titlefoot{Joint Institute for Nuclear Research~(JINR), Joliot-Curie 6, 141980 Dubna, Moscow region, Russia\label{dubna}}
+	
+	\Aname{M.~Zeyrek}{METU}
+	\titlefoot{Middle East Technical University (METU), TR-06800, Ankara, Turkey\label{METU}}
+	
+	\Aname{M.~Convery}{SLAC},
+	\Aname{L.~Domine}{SLAC},
+	\Aname{R.~Itay}{SLAC},
+	\Aname{K.~Skarpaas}{SLAC},
+	\Aname{H.~Tanaka}{SLAC},
+	\Aname{K.~Terao}{SLAC},
+	\Aname{Y-T.~Tsai}{SLAC}, and
+	\Aname{T.~Usher}{SLAC}
+	\titlefoot{SLAC National Accelerator Laboratory and Stanford University, 2575 Sand Hill Rd, Menlo Park, CA 94025, USA\label{SLAC}}
+	
+	\Aname{C.~K.~Jung}{Stony},
+	\Aname{C.~Vilela}{Stony},
+	\Aname{M.~Wilking}{Stony}, and
+	\Aname{K.~Wood}{Stony}
+	\titlefoot{Stony Brook University, Stony Brook, NY 11794, USA\label{Stony}}
+	
+	\Aname{M.~Soderberg}{Syracuse}
+	\titlefoot{Syracuse University, Syracuse, NY 13210, USA\label{Syracuse}}
+	
+	\Aname{D.~A.~Dwyer}{LBNL},
+	\Aname{D.~Gnani}{LBNL},
+	\Aname{C.~Grace}{LBNL},
+	\Aname{S.~Kohn}{LBNL},
+	\Aname{M.~Kramer}{LBNL},
+	\Aname{A.~Krieger}{LBNL},
+	\Aname{K.~B.~Luk}{LBNL},
+	\Aname{P.~Madigan}{LBNL}, and
+	\Aname{C.~Marshall}{LBNL}
+	\titlefoot{University of California and Lawrence Berkeley National Laboratory, Berkeley, CA 94720, USA\label{LBNL}}
+	
+	\Aname{B.~Bilki}{Iowa},
+	\Aname{K.~Cankocak}{Iowa},
+	\Aname{J.~Nachtman}{Iowa},
+	\Aname{Y.~Onel}{Iowa}, and
+	\Aname{A.~Penzo}{Iowa}
+	\titlefoot{University of Iowa High Energy Physics Group, Iowa City, IA 52242, USA\label{Iowa}}
+	
+	\Aname{C.~M.~Mauger}{UPenn}
+	\titlefoot{University of Pennsylvania,Philadelphia, PA 19104, USA\label{UPenn}}
+	
+	\Aname{S.~Manly}{Rochester},
+	\Aname{K.~S.~McFarland}{Rochester}, and
+	\Aname{D.~Ruterbories}{Rocester}
+	\titlefoot{University of Rochester, Rochester, NY 14627 USA\label{Rochester}}
+		
+	\Aname{D.~Barker}{Sheffield},
+	\Aname{A.~C.~Ezeribe}{Sheffield},
+	\Aname{T.~Gamble}{Sheffield},
+	\Aname{N.~McConkey}{Sheffield},
+	\Aname{N.~J.~C.~Spooner}{Sheffield},
+	\Aname{M.~Thiesse}{Sheffield}, 
+	\Aname{E.~Tyley}{Sheffield}, and
+	\Aname{M.~H.~Wright}{Sheffield}
+	\titlefoot{University of Sheffield, Western Bank, Sheffield S10 2TN, UK\label{sheffield}}
+	
+	\Aname{C.~Kuruppu}{SC}, 
+	\Aname{S.~R.~Mishra}{SC}, and
+	\Aname{R.~Petti}{SC}
+	\titlefoot{University of South Carolina, 712 Main Street, Columbia, SC 29208 USA\label{SC}}
+	
+	\Aname{J.~Asaadi}{Arlington}, and 
+	\Aname{H.~Sullivan}{Arlington}
+	\titlefoot{University of Texas at Arlington, Arlington, TX 76019, USA\label{Arlington}}
+	
+	\Aname{B.~Fleming}{YALE}, and
+	\Aname{S.~Tufanli}{YALE}
+	\titlefoot{Yale University, Wright Laboratory, New Haven, CT 06520 USA\label{YALE}}
+	
+\end{center}
+\vspace*{1cm}
 
 \begin{abstract}
-  This document outlines the case for a neutrino beam test of the DUNE near detector (ND) at Fermilab, dubbed ProtoDUNE-ND. The proposed location for ProtoDUNE-ND is in the MINOS-ND hall, upstream of the current MINERvA/MINOS-ND locations, placing it on-axis in the NuMI medium energy neutrino beam. The core of ProtoDUNE-ND is the ArgonCube 2x2 Demonstrator module, a large scale demonstrator for the core liquid argon (LAr) component of the ND. A description of the ArgonCube 2x2 Demonstrator is given, together with a brief outline of the required infrastructure. Additionally, the possibility to include test modules for other DUNE ND component detectors is discussed. 
-  An overview of the detector physics studies which can be completed with ProtoDUNE-ND is given, which will inform the final DUNE ND design choices, and aid in developing reconstruction tools in preparation for DUNE.
-  Placing the 2x2 Demonstrator as a stand-alone underground in the NuMI beam will allow for the development and demonstration of the tools necessary to disentangle piled up events within the LAr.
-  In the absence of DUNE ND demonstrators for the other technologies, existing detectors can be utilised.
-  Pairing the 2x2 with MINERvA enables a test of the ability to track muons and fast neutrons from the slow and busy LAr detector into a fast-response detector, the keystone of the DUNE ND. 
-  Additionally, by pairing the 2x2 with both MINERvA and MINOS the response of 2x2 can be characterised as a function of momentum, providing a validation of the momentum measurement via multiple coulomb scattering that will need to be used for side-exiting muons in both the DUNE ND and far detector.
+
+This document outlines the case for a neutrino beam test of the DUNE near detector (ND) at Fermilab, dubbed ProtoDUNE-ND. The proposed location for ProtoDUNE-ND is in the MINOS-ND hall, upstream of the current MINERvA/MINOS-ND locations, placing it on-axis in the NuMI medium energy neutrino beam. The core of ProtoDUNE-ND is the ArgonCube 2x2 Demonstrator module, a large scale demonstrator for the core liquid argon (LAr) component of the ND. A description of the ArgonCube 2x2 Demonstrator is given, together with a brief outline of the required infrastructure. Additionally, the possibility to include test modules for other DUNE ND component detectors is discussed. 
+An overview of the detector physics studies which can be completed with ProtoDUNE-ND is given, which will inform the final DUNE ND design choices, and aid in developing reconstruction tools in preparation for DUNE.
+Placing the 2x2 Demonstrator as a stand-alone underground in the NuMI beam will allow for the development and demonstration of the tools necessary to disentangle piled up events within the LAr.
+In the absence of DUNE ND demonstrators for the other technologies, existing detectors can be utilised.
+Pairing the 2x2 with MINERvA enables a test of the ability to track muons and fast neutrons from the slow and busy LAr detector into a fast-response detector, the keystone of the DUNE ND. 
+Additionally, by pairing the 2x2 with both MINERvA and MINOS the response of 2x2 can be characterised as a function of momentum, providing a validation of the momentum measurement via multiple coulomb scattering that will need to be used for side-exiting muons in both the DUNE ND and far detector.
   
 \end{abstract}
 
-\maketitle
+
 
 % For now suppress the table of contents
 %\tableofcontents
@@ -64,11 +208,14 @@
 \input{outlook.tex}
 \input{conclusions.tex}
 
+\printbibliography
+
 %\begin{acknowledgments}
 %Thanks for all the \$\$\$
 %\end{acknowledgments}
 
-\bibliography{bibliography.bib}% Produces the bibliography via BibTeX.
+
+%\bibliography{bibliography.bib}% Produces the bibliography via BibTeX.
 
 %\appendix
 %\input{an_appendix}
