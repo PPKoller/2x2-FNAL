@@ -97,6 +97,7 @@ The solution pursued for the ArgonCube effort is ArCLight~\cite{arclight}, which
 An example ArCLight sheet is shown in Figure~\ref{fig:arclight}. These sheets are mounted on the walls of the module, inside the field shell, aligned with the drift direction, between the anode and the cathode. 
 The additional \SI{5}{\milli\metre} deep dead volume is similar to the one caused by the charge readout in the perpendicular direction.
 
+\subsubsection{Infrastructure for the 2x2 Demonstrator}
 Infrastructure requirements in the MINOS ND hall are dominated by cryogenics, but power supply constraints should also be considered.
 Control, slow monitoring and DAQ systems will be implemented before the detector arrives at Fermilab.  
 A dedicated LN2 supply capable of \SI{0.75}{\litre\per\minute} is required for the constant cooling of the detector. 
@@ -107,7 +108,7 @@ The readout electronics will require a clean power supply, ideally separated for
 The four modules each require a filtered High Voltage (HV) supply of \SI{30}{\kilo\volt}, which can be provided by a single external supply and a splitter, with each splitter serving as a filter.
 The DAQ will require a beam trigger and GPS timing inputs. 
 The GPS is particularly important when reconstructing events across different detectors, as will be the case in DUNE ND.
-
+A subsequent document will describe all infrastructure requirements in greater detail.
 
 \subsection{Downstream tracking detectors}
 \label{sec:tracking_detectors}
@@ -117,7 +118,7 @@ The 3DST is a fully active plastic scintillator detector made of a large number 
 
 The HPgTPC is a high-pressure argon gas TPC which will operate inside a magnetic field~\cite{dune_ndcsg}. Its purpose is two-fold. Firstly, it acts as a downstream tracker for particles exiting the LAr detector, with a superior dE/dx resolution, and the ability to measure the sign and momentum of particles in the magnetic field. Secondly, it offers a lower threshold, higher resolution argon target detector than the LAr component, which may help constrain certain aspects of the model. The HPgTPC needs to be coupled with a further downstream ECal to detect escaping photons, and to provide fast timing to differentiate tracks from multiple interactions. Although a HPgTPC prototype is not ready at the time of writing this proposal, it is expected that a prototype will be produced during ProtoDUNE-ND operation, so the program should be flexible enough to incorporate a new detector component. An ECal is required for the HPgTPC in order to provide detect neutrals which will not convert in the argon gas.
 
-As all potential DUNE ND configurations identified in Ref.~\cite{dune_ndcsg} include a fast scintillator detector component, and a 3DST module will not be available on the timescale of ProtoDUNE-ND, it is desirable to see whether elements of the existing MINERvA detector in the NuMI hall can be re-purposed, as the MINERvA experiment will stop taking data in summer 2019, before ProtoDUNE-ND will get underway. This possibility is discussed separately in Section~\ref{sec:MINERvA_MINOS}, following discussions with members of MINERvA who have expressed an interest in joining the ProtoDUNE-ND effort.
+As all potential DUNE ND configurations identified in Ref.~\cite{dune_ndcsg} include a fast scintillator detector component, and a 3DST module will not be available on the timescale of ProtoDUNE-ND, it is desirable to see whether elements of the existing MINERvA detector in the NuMI hall could be re-purposed, as the MINERvA experiment will stop taking data in summer 2019, before ProtoDUNE-ND will get underway. This possibility is discussed separately in Section~\ref{sec:MINERvA_MINOS}.
 
 As it is expected that the ProtoDUNE-ND setup may need to be reconfigured, with the addition of more components over time, and because DUNE-PRISM is now the baseline ND design, it is desirable to include a moveable cryogenic system for the ArgonCube 2x2 Demonstrator in ProtoDUNE-ND, which would allow the future moveable cryogenics for DUNE-PRISM to be tested.
 
