@@ -1,33 +1,20 @@
-\section{Incorporating a downstream tracker into ProtoDUNE-ND}
+\section{Incorporating other detector prototypes into ProtoDUNE-ND}
 \label{sec:MINERvA_MINOS}
 
-As discussed in Section~\ref{sec:detector-physics-studies}, a large fraction of particles will not be contained in the 2x2 alone. An additional tracking component would recover many of these particles, and would make it possible to benchmark the 2x2 response to a wider range of particle energies, and therefore the expected DUNE phase-space. One possibility raised by MINERvA collaborators is to repurpose portions of their detector after its decommissioning.      
+It is hoped that other DUNE-ND detector prototypes will become available, the ProtoDUNE-ND complex will evolve over time. As has been remarked, the cryogenic system for the ArgonCube 2x2 will be moveable to test key components of the DUNE-PRISM technical design, which will allow ProtoDUNE-ND to be reconfigured to accommodate any future detectors. In this section, we discuss how adding those additional detectors will enhance the neutrino engineering studies possible with the ArgonCube 2x2 Demonstrator. Broadly speaking, three additional options are considered, which reflect possible DUNE-ND design choices considered in Ref.~\cite{dune_ndcsg}: a scintillator tracking detector; a magnetized low-density tracking detector; and a Cosmic Ray Tagging (CRT) system.
 
-This section discusses enhancements to the detector physics program at ProtoDUNE-ND if a downstream tracker is included, based on discussions with members of MINERvA and other active DUNE ND collaborators who have expressed an interest in joining the ProtoDUNE-ND effort. Although, these studies are not specific to MINERvA and MINOS ND, we have used them as illustrative examples here because MINERvA collaborators have offered advice and engineering support.   
-
-The MINERvA experiment~\cite{minerva-nim}, which now controls and maintains the re-purposed MINOS near detector, is located in the MINOS ND hall in which ProtoDUNE-ND will be installed, and is due to complete its data-taking in spring--summer 2019. As discussed in Section~\ref{sec:protodune-nd}, all DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component. Combining slow LAr TPC charge readout and fast scintillator and LAr light readout will be an essential reconstruction requirement for the DUNE ND. 
-
-We note that clearly, the scientific benefit in having a downstream tracker included in ProtoDUNE-ND, or repurposing an existing tracker, must be evaluated against the technical feasibility and the availability of resources (person power and financial). These costs would have to be shared between ProtoDUNE-ND collaborators and Fermilab. 
-
-\subsection{Repurposing the MINERvA detector}
+\subsection{Scintillator tracking detector}
 \label{sec:minerva}
-The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purpose of the discussion in this section, we will assume that the steel shield, scintillator veto plane, helium vessel, and nuclear targets region will be removed. 
-\begin{figure}[htb]
-  \centering
-  \subfloat[Front view] {\label{fig:minerva_detector_front}\includegraphics[width=0.35\textwidth]{plots/minerva_module_transverse}}
-  \subfloat[Side view]  {\includegraphics[width=0.60\textwidth]{plots/MINERvA_schematic.pdf}}
-  \caption{Schematic of the MINERvA experiment. Reproduced from Figure 1 of Ref.~\cite{minerva-nim}.}
-  \label{fig:minerva_detector}
-\end{figure}
+Two different (not mutually exclusive) scintillator options are currently being considered for the DUNE ND design. Firstly, a large, fully active, Three-Dimensional Scintillator Tracker (3DST)
+As discussed in Section~\ref{sec:detector-physics-studies}, a large fraction of particles will not be contained in the 2x2 alone. It is hoped that in time, additional DUNE ND demonstrator modules can be added to ProtoDUNE-ND, and the An additional tracking component would recover many of these particles, and would make it possible to benchmark the 2x2 response to a wider range of particle energies, and therefore the expected DUNE phase-space.
 
-The remaining central tracking region, and both the electromagnetic(EM) and hadronic calorimeters are divided into modules which consist mostly of hexagonal scintillator planes, each made of 127 triangular scintillator bars, arranged in three different orientations (60$^\circ$ rotations between each plane). There are 62 modules in the fully-active tracker region, each composed of two scintillator layers. A 15 cm border of 0.2 cm thick lead on the downstream end of each module provides EM calorimetry for particles exiting the side of the tracking region.
 
 The downstream EM calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 cm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva_detector_front}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side EM and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.8\textwidth]{{plots/Event_Displays_2x2_MINERvA/MINERvA_full_e70_rectangle_crop}.png}
-  \caption{Example simulated event for a 7.0 GeV $\nu_{\mu}$--argon charged-current interaction, in which particles not contained in the ArgonCube 2x2 enter the MINERvA central tracking region downstream. Energy deposits are color-coded according to the particle type: $\pi^{\pm}$ --- blue; $\mu^{\pm}$ --- purple; $e^{+}$ --- green; $e^{-}$ --- yellow; proton --- red; recoiling nuclei --- black. The event vertex was randomly placed inside the active volume of the 2x2 Demonstrator module.}
+  \caption{Example simulated event for a 7.0 GeV $\nu_{\mu}$--argon charged-current interaction, in which particles not contained in the ArgonCube 2x2 enter the scintillator block detector. Energy deposits are color-coded according to the particle type: $\pi^{\pm}$ --- blue; $\mu^{\pm}$ --- purple; $e^{+}$ --- green; $e^{-}$ --- yellow; proton --- red; recoiling nuclei --- black. The event vertex was randomly placed inside the active volume of the 2x2 Demonstrator module.}
   \label{fig:2x2+MINERvA_event}
 \end{figure}
 
