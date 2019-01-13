@@ -5,6 +5,6 @@ clean:
 
 %.pdf : %.tex
 	pdflatex $*
-	bibtex $*
+	biber $*
 	pdflatex $*
 	pdflatex $*
