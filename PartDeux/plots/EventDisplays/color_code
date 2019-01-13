@@ -1,0 +1,11 @@
+     rgbPoints  = [-321,     000,    000,    255] # K-       Blue
+     rgbPoints += [-211,     000,    255,    255] # Pi-      Cyan
+     rgbPoints += [-13,      255,    000,    255] # Mu-      Fuchsia
+     rgbPoints += [-11,      000,    255,    000] # e+       Lime
+     rgbPoints += [ 11,      255,    215,    000] # e-       Gold
+     rgbPoints += [ 13,      255,    000,    255] # Mu+      Fuchsia
+     rgbPoints += [ 211,     000,    255,    255] # Pi+      Cyan
+     rgbPoints += [ 321,     000,    000,    255] # K+       Blue
+     rgbPoints += [ 2212,    255,    000,    000] # P        Red
+     rgbPoints += [3123,     000,    000,    000] # Nuclei   Black
+

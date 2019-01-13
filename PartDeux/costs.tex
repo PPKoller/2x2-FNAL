@@ -1,0 +1,40 @@
+\section{MINERvA/MINOS running costs}
+\label{sec:costs}
+
+
+In the discussion in Section~\ref{sec:minerva}, the detector setup maximizes the amount of the MINERvA detector repurposed downstream of the ArgonCube 2x2 module, in order to increase containment in the very forward region, where most particles go. However, if MINOS-ND is also included as part of the ProtoDUNE-ND setup, this imperative is no longer there, and less of MINERvA would be needed downstream. In this case, MINERvA modules could be redeployed to the sides of, and even above, the 2x2 cryostat to act as a cosmic ray or dirt muon tagger, and to tag escaping particles. In practice, these panels could be used to better identify a sample of fully contained neutrino events for the studies outlined in Sections~\ref{sec:minerva-acceptance}. Additionally, these cosmic ray tagging modules could then be used to validate space charge build-up and electric field uniformity studies outlined in Section~\ref{sec:efield}, and the cosmic suppression studies described in Section~\ref{sec:cosmic-suppression}, for which an additional scintillator panel would be required.
+
+\subsection{MINERvA/MINOS running costs}
+The estimated labor costs for MINERvA infrastructure support are:
+\begin{itemize}
+\item 1 person as coordinator and interface with lab computing experts --- 0.5 FTE
+\item 1 person as software release and support (Gaudi) --- 0.5 FTE
+\item 1 person to monitor keepup --- 0.1-0.25 FTE
+\item 2 people for production --- 0.5 FTE (very conservative)
+\end{itemize}
+Giving a total requirement of 2.1--2.25 FTE, which would have to come from current MINERvA collaborators, not necessarily FNAL employees, who are interested in joining the ProtoDUNE-ND effort. It should be noted that in FY17 MINERvA and MINOS combined used 0.3 FTE from the FNAL Neutrino Division Detector Operations group.
+
+\begin{table}[htbp]
+  \centering  
+      {\renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{cccc}
+          \hline\hline
+          & & CPU hours & Disk usage (bytes) \\
+          \hline
+          \multirow{2}{*}{Data} & MINERvA (50\%) & $4.85\times 10^{4}$ & $2.07\times 10^{13}$ \\
+          & MINOS & $7.65\times 10^{4}$ & $4\times 10^{12}$ \\
+          \hline
+          \multirow{2}{*}{MC} & MINERvA (50\%) & $1.8\times 10^{5}$ & $6.3\times 10^{13}$ \\
+          & MINOS & $4.5\times 10^{4}$ & $1.3\times 10^{12}$ \\          
+          \hline
+          \multicolumn{2}{c}{Total} & $3.5\times 10^{5}$ & $8.9\times 10^{13}$ \\
+          \hline\hline
+      \end{tabular}}  
+      \caption{Estimated computing resources required to run MINERvA and the MINOS-ND, assuming that 50\% of MINERvA is retained for ProtoDUNE-ND.}
+      \label{tab:minerva-computing}
+\end{table}
+The expected yearly computing requirement for MINERvA with and without MINOS-ND are shown in Table~\ref{tab:minerva-computing}, assuming that ~50\% of the MINERvA detector is retained and repurposed for ProtoDUNE-ND. Note that it has been assumed that the Monte Carlo production should be ~2$\times$ the data, in keeping with current practice for MINERvA analyses in the NuMI medium energy beam. Note also that the costs in Table~\ref{tab:minerva-computing} do not include those for the ArgonCube 2x2 module. Assuming a cost of \$0.01/CPU hour and \$30/TB, the total cost per year is estimated to be $\sim$\$6000 ($\sim$\$3500 CPU + $\sim$\$2500 disk). Note that in this estimate of computing costs, we have not included the cost of databases and their allocations, or the cost of supporting and maintaining the readout machines.
+
+There are sufficient spare Minder Boards for MINERvA for at least 2 years of operations with the full detector, so there should be plenty of spares given that we would not be using all of the existing MINERvA detector. MINOS front end boards (FEBs) are difficult to replace and prone to failure, however, if the use of MINOS-ND for ProtoDUNE-ND were to be seriously considered, it may be possible to replace the current MINOS FEBs with MINERvA Minder Boards, and still have plenty to spares. This possibility should be seriously considered if the instability of MINOS FEBs are a major issue for this proposal. Of course, the labor cost of such an endeavour would need to be bourne by current MINERvA collaborators wishing to join the DUNE R\&D efforts. 
+
+Finally, the cost of running the detectors themselves has not been considered here. We note that the majority of the power consumption by MINERvA+MINOS-ND is used to run the MINOS-ND magnet. Although the magnet is desirable, it would be possible to use MINOS-ND with the magnet off, at least for some portion of the time, and get momentum estimates by range only.
