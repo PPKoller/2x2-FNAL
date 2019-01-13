@@ -14,16 +14,19 @@ In order to check the feasibility of these studies, two different simulations we
   \label{fig:argonbox_event_display}
 \end{figure}
 
-The example event displays shown in Figure~\ref{fig:argonbox_event_display} give a basic idea of how NuMI ME energy events (in FHC) would look in the ArgonCube 2x2 Demonstrator module. Although many of the tracks and showers are not contained, some fraction are, which is discussed in more detail for the detector physics studies described below. It also suggests that some fraction of the events seen in the ArgonCube 2x2 Demonstrator module would be fully contained in the active volume, or fully contained except for the outgoing muon, which may open the way for some interesting physics studies beyond the detector physics described in this document.
-%%%HERE
- However, any possible utility in this direction would be severely limited without a downstream tracker to contain higher momentum hadronic components, and to tag the muon. This makes the case for additional ProtoDUNE-ND components for a HPTPC and 3DST downstream even stronger.
+The example event displays shown in Figure~\ref{fig:argonbox_event_display} give a basic idea of how NuMI ME events (in FHC) would look in the ArgonCube 2x2 Demonstrator module. Although many of the tracks and showers are not contained, some fraction are, which is discussed in more detail for the detector physics studies described below. 
+
+It also suggests that some fraction of the events seen in the ArgonCube 2x2 Demonstrator module would be fully contained in the active volume, or fully contained except for the outgoing muon, which may open the way for extending the characterisation of detector response beyond the detector physics described in this document.
+However, any possible utility in this direction would be severely limited without a downstream tracker to contain higher momentum hadronic components, and to tag the muon. 
+This makes the case for additional downstream ProtoDUNE-ND demonstrators for the HPTPC and 3DST even stronger.
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.5\textwidth]{plots/2x2_ntracks_all.png}
-  \caption{The expected yearly rates of minimum and highly ionizing particles expected in the 2x2 Demonstrator module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.10 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}.}
+  \caption{The expected yearly rates of minimum and highly ionizing particles expected in the 2x2 Demonstrator module's \SI{1.7}{\tonne} LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.10 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}.}
   \label{fig:track_multiplicity}
 \end{figure}
+
 In order to be a relevant test for the full ArgonCube near detector, which will be in the LBNF beamline, it is useful to verify that the basic properties of the events are similar, despite the NuMI ME beam being somewhat higher energy than the planned LBNF beam (as shown in Figure~\ref{fig:beam_options}). Figure~\ref{fig:track_multiplicity} shows the expected multiplicity of minimum or highly ionizing tracks at the vertex for both the LBNF and NuMI ME beams, in neutrino and antineutrino mode, produced with the GENIE generator. The track multiplicities are similar, which indicates that the scale of the reconstruction problem is similar, and the proposed ProtoDUNE-ND test will be a useful benchmark for developing the ArgonCube reconstruction software.
 
 \begin{figure}[htb]
