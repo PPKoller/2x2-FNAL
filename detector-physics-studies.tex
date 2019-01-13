@@ -4,7 +4,7 @@ Basic detector stability checks will be performed with a period of detector oper
 
 In order to check the feasibility of these studies, two different simulations were used. Firstly, high statistics GENIE Monte Carlo samples were produced, in order to compare basic properties of neutrino interactions expected in the LBNF and NuMI ME beamlines. Secondly, GENIE events were used to seed a basic GEANT4 simulation, using the ArgonBox\footnote{\url{https://github.com/dadwyer/argon_box}} software, in order to get a basic understanding of event shape and containment. In the latter simulation, events were simulated in a very large (200 m $\times$ 200 m $\times$ 200 m) box of LAr, and were then distributed randomly inside a volume with the correct spatial dimensions of the ArgonCube 2x2 Demonstrator module. Although the 2x2 geometry was not included in the simulation, this gives an acceptable estimate of the expected event rates and containment for the studies described below, as these do not depend significantly on the detailed geometry of the detector. Note that for all ArgonBox studies shown here, the NuMI on-axis forward horn current (neutrino-enhanced) beam was used. Examples of the ArgonBox simulation with the basic ArgonCube 2x2 Demonstrator geometry superimposed can be seen in Figure~\ref{fig:argonbox_event_display} for a number of different neutrino energies.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \subfloat[$E_{\nu}$ = 2.60 GeV] {\includegraphics[width=0.45\textwidth]{{plots/EventDisplays/2.60GeV_square_crop}.png}}\hspace{25pt}
   \subfloat[$E_{\nu}$ = 3.36 GeV] {\includegraphics[width=0.45\textwidth]{{plots/EventDisplays/3.36GeV_square_crop}.png}}\\
@@ -20,7 +20,7 @@ It also suggests that some fraction of the events seen in the ArgonCube 2x2 Demo
 However, any possible utility in this direction would be severely limited without a downstream tracker to contain higher momentum hadronic components, and to tag the muon. 
 This makes the case for additional downstream ProtoDUNE-ND demonstrators for the HPgTPC and 3DST even stronger.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{plots/2x2_ntracks_all.png}
   \caption{The expected yearly rates of minimum and highly ionizing particles expected in the 2x2 Demonstrator module's \SI{1.7}{\tonne} LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.10 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}.}
@@ -29,7 +29,7 @@ This makes the case for additional downstream ProtoDUNE-ND demonstrators for the
 
 In order to be a relevant test for the full ArgonCube DUNE ND component, which will be in the LBNF beamline, it is useful to verify that the basic properties of the events are similar, despite the NuMI ME beam being somewhat higher energy than the planned LBNF beam (as shown in Figure~\ref{fig:beam_options}). Figure~\ref{fig:track_multiplicity} shows the expected multiplicity of minimum or highly ionizing tracks at the vertex for both the LBNF and NuMI ME beams, in neutrino and antineutrino mode, produced with the GENIE generator. The track multiplicities are similar, which indicates that the scale of the reconstruction problem is similar, and the proposed ProtoDUNE-ND test will be a useful benchmark for developing the ArgonCube reconstruction software.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \subfloat[$\mu^{\pm}$] {\includegraphics[width=0.5\textwidth]{plots/2x2_muon_mom_all.png}}
   \subfloat[Protons]    {\includegraphics[width=0.5\textwidth]{plots/2x2_proton_mom_all.png}}\\
@@ -38,18 +38,19 @@ In order to be a relevant test for the full ArgonCube DUNE ND component, which w
   \caption{The expected yearly rates of various particles produced at the vertex, as a function of their momentum, expected in the 2x2 Demonstrator module's 1.7t LAr volume for the NuMI ME and LBNF fluxes, produced using GENIE v2.12.10 with the ``ValenciaQEBergerSehgalCOHRES'' configuration~\cite{genie}. Note that every relevant particle from each event is included.}
   \label{fig:momenta}
 \end{figure}
+
 In Figure~\ref{fig:momenta}, the momenta of various particles coming from the initial neutrino--argon vertex are compared for the LBNF and NuMI ME beams. As expected, the energy distributions of all of the particles are slightly broader for the NuMI ME flux, but there are significant numbers of events in the NuMI sample which have particle kinematics typical of the LBNF sample. The NuMI sample would therefore be an efficient tool for studying the performance of the ArgonCube detector in the LBNF beam.
 
 In the full 7 $\times$ 5 module ArgonCube detector and the more intense LBNF beamline, with $\sim$14.7 interactions per \SI{10}{\micro\second} beam spill makes for a very high-multiplicity environment. The entire spill will effectively occur instantaneously in the \SI{220}{\micro\second} drift window. Issues with tracks overlapping from separate neutrino interactions are mitigated by the fully-3D readout, but association of all hits to a specific neutrino interaction can still be challenging. For charged tracks, which are spatially connected to their respective neutrino interaction vertices, this association is straightforward.  However, many events contain photons and neutrons, which produce significant energy deposits that are detached from the rest of the event, and may even occur in a different ArgonCube module. Here, the ArCLight light-readout system, with the ability to measure prompt scintillation light with nanosecond resolution, will play a crucial role to associate particle tracks with the correct interaction vertices. Additionally, the relatively small size of the ArgonCube 2x2 Demonstrator module means that relatively few of the tracks will be contained, making particle identification (PID) studies challenging, except for the cases listed below. Although other detectors are not included in the ArgonBox simulation, the lack of containment and PID capabilities mean that including another subdetector in the ProtoDUNE-ND setup is essential for any detector response measurements as a function of charge or momentum.
 
-
+\FloatBarrier
 \subsection{Combining light and charge signals}
 An important challenge is to develop automated event reconstruction software with the ArgonCube detector. The pixel readout removes the ambiguities present for projective wire readout TPCs, but the reconstruction software for the latter has benefited from several years of development for the MicroBooNE~\cite{microboone} and ICARUS experiments~\cite{icarus}. Although strides forward for pixel readout TPCs have been made in the PixLAr experiment (where pixel planes were introduced to the LArIAT experiment~\cite{lariat}), the reconstruction problem for charge particle scattering in a small TPC is much simpler than for the ProtoDUNE-ND or DUNE ND environments. Additionally, the reconstructed track position along the drift direction, and the suppression of cosmic backgrounds within the beam window, will be performed using information from the ArCLight light collection system. Checking that the light and charge signals can be combined in the full-size ArgonCube modules, in a comparably noisy environment to the DUNE ND, is an essential test of the ArgonCube design.
 
 \subsection{Neutron identification}
 \label{sec:2x2_neutron}
 Neutrons present a particular challenge for neutrino energy reconstruction in DUNE and other long-baseline neutrino oscillation experiments. Neutrino oscillations are a function of neutrino energy, but this cannot be reconstructed on an event by event basis because neutrons carry away some fraction of the energy, and are not directly observable. Figure~\ref{fig:neutron_kinematics} shows the expected neutron rate as a function of multiplicity and momentum for the LBNF and NuMI ME beamlines.
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \subfloat[Neutron multiplicity]   {\includegraphics[width=0.5\textwidth]{plots/2x2_nneutron_all.png}}
   \subfloat[Neutron momentum]       {\includegraphics[width=0.5\textwidth]{plots/2x2_neutron_mom_all.png}}  
@@ -95,7 +96,7 @@ Figure~\ref{fig:min_dist_proton} shows the minimum distance between the neutrino
 \subsection{Reconstruction in a modular environment}
 The module walls of the ArgonCube design produce gaps in particle tracks traversing multiple modules. This is not the same as dead wires in classic LArTPC readouts, as it results in only $\mathcal{O}\left(10\right)\,\mathrm{mm}$ gaps in energy deposits, rather than degrading sensitivity over large areas of charge readout. Algorithms to join such segmented tracks already exist~\cite{pandora}, but have not been adapted to the ArgonCube design. Simple track matching efficiencies across modules can be calculated using cosmics, which will be an essential first step. However, for events with many tracks produced at the vertex (see Figure~\ref{fig:track_multiplicity}), a detailed study of the reconstruction performance given the module walls will need to be carried out. ProtoDUNE-ND provides an opportunity to do so, and to check that the reconstruction behaves as expected, before moving to the full DUNE ND deployment of ArgonCube.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \subfloat[EM shower]       {\includegraphics[width=0.5\textwidth]{plots/2x2_minerva_plots/EM_cont_eff_2x2.png}}
   \subfloat[Hadronic shower] {\includegraphics[width=0.5\textwidth]{plots/2x2_minerva_plots/H_cont_eff_2x2.png}}
@@ -108,7 +109,7 @@ This problem becomes significantly more complicated for electro-magnetic (EM), o
 \label{sec:pi0_reco}
 A more quantitative measure of how well EM showers can be reconstructed in the modularized ArgonCube detector could be possible using $\pi^{0} \rightarrow \gamma\gamma$ decays (which have a branching ratio of 98.8\%~\cite{pdg_2018}), in which both decay photons produce a shower, and are contained in the active volume of the detector. Combining the information on the two showers, and attempting to reconstruct the invariant mass peak of the $\pi^{0}$ provides a measurement of the EM shower resolution. We note that Dalitz decay, $\pi^{0} \rightarrow \gamma e^{+} e^{-}$ (with a branching ratio of 1.2\%~\cite{pdg_2018}) may also be an interesting sample in such a high statistics environment, as only a single photon has to convert in the LAr. However, this sample was not considered further in this initial study.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \subfloat[$\pi^{0}$ multiplicity]   {\includegraphics[width=0.5\textwidth]{plots/2x2_npi0_all.png}}
   \subfloat[$\pi^{0}$ momentum] {\includegraphics[width=0.5\textwidth]{plots/2x2_pi0_mom_all.png}}  
@@ -117,7 +118,7 @@ A more quantitative measure of how well EM showers can be reconstructed in the m
 \end{figure}
 Figure~\ref{fig:pi0_kinematics} shows the expected $\pi^{0}$ production rate in the active volume of the 2x2 in the LBNF and NuMI ME beamlines, as a function of $\pi^{0}$ multiplicity in each event and $\pi^{0}$ momentum. There are, of course, some qualifiers for this study. Many photon-induced showers will not be contained, and those which are will be lower energy than many EM showers expected in the DUNE ND. Figure~\ref{fig:pi0_containment_2x2} shows the efficiency for containing both photon-induced showers from a primary $\pi^{0}$ decay in the 2x2's active volume, shown for all $\pi^{0}$'s produced inside that volume. As expected, the efficiency is low for high energy pions, but it will still be possible to reconstruct a large fraction of the lower momentum $\pi^{0}$'s from Figure~\ref{fig:pi0_kinematics}. Overall, this study shows that this $\pi^{0}$ mass peak reconstruction will be a worthwhile study at ProtoDUNE-ND.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{plots/2x2_minerva_plots/Pi0_cont_eff_2x2.png}
   \caption{Efficiency for containing both photon-induced showers from $\pi^{0}$ decays in the ArgonCube 2x2 module, as a function of the $\pi^{0}$ kinetic energy and angle w.r.t the incoming neutrino direction. Containment is defined as $\geq$90\% of the energy being deposited in an active volume of a detector, and all primary $\pi^{0}$'s produced inside the 2x2's active volume are included.}
