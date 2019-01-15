@@ -5,7 +5,8 @@ This section discusses the ProtoDUNE-ND-Tracker components to be repurposed from
 
 \subsection{Repurposing the MINERvA detector}
 \label{sec:minerva}
-The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purpose of the discussion in this section, we will assume that the steel shield, scintillator veto plane, helium vessel, and nuclear targets region will be removed, and this setup will be refered to as the ``ProtoDUNE-ND-Tracker''.
+The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purpose of the discussion in this section, we will assume that the steel shield, scintillator veto plane, helium vessel, and nuclear targets region will be removed, and this setup will be referred to as the ``ProtoDUNE-ND-Tracker''.
+
 \begin{figure}[htb]
   \centering
   \subfloat[Front view] {\label{fig:minerva_detector_front}\includegraphics[width=0.35\textwidth]{plots/minerva_module_transverse}}
@@ -14,6 +15,8 @@ The MINERvA detector is shown in Figure~\ref{fig:minerva_detector}. For the purp
   \label{fig:minerva_detector}
 \end{figure}
 
+%Side is integral, and not separatable from central tracker.
+
 The remaining central tracking region, and both the electromagnetic (EM) and hadronic calorimeters are divided into modules which consist mostly of hexagonal scintillator planes, each made of 127 triangular scintillator bars, arranged in three different orientations (60$^\circ$ rotations between each plane). There are 62 modules in the fully-active tracker region, each composed of two scintillator layers. A 15 cm border of 0.2 cm thick lead on the downstream end of each module provides EM calorimetry for particles exiting the side of the tracking region.
 
 The downstream EM calorimeter is composed of 10 modules, each with two scintillator planes and a 0.2 cm thick lead plate on the downstream end. There are 20 modules in the downstream hadronic calorimeter, each with a single scintillator plane and a 2.54 cm thick hexagonal steel plane. The outer detector consists of a steel frame supporting structure with embedded scintillator planes, as can be seen in Figure~\ref{fig:minerva_detector_front}, which turns the support structure into a hadronic calorimeter. The combination of the downstream and side EM and hadronic calorimeters allows for containment of most particles which escape from the central tracking region, and allows for particle identification and momentum measurements.
@@ -21,11 +24,15 @@ The downstream EM calorimeter is composed of 10 modules, each with two scintilla
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.8\textwidth]{{plots/Event_Displays_2x2_MINERvA/MINERvA_full_e70_rectangle_crop}.png}
-  \caption{Example simulated event for a 7.0 GeV $\nu_{\mu}$--argon charged-current interaction, in which particles not contained in the ArgonCube 2x2 enter the MINERvA central tracking region downstream. Energy deposits are color-coded according to the particle type: $\pi^{\pm}$ --- blue; $\mu^{\pm}$ --- purple; $e^{+}$ --- green; $e^{-}$ --- yellow; proton --- red; recoiling nuclei --- black. The event vertex was randomly placed inside the active volume of the 2x2 Demonstrator module.}
+  \caption{Example simulated event for a 7.0 GeV $\nu_{\mu}$--argon charged-current interaction, in which particles not contained in the ArgonCube 2x2 enter the ProtoDUNE-ND-Tracker downstream. Energy deposits are color-coded according to the particle type: $\pi^{\pm}$ --- blue; $\mu^{\pm}$ --- purple; $e^{+}$ --- green; $e^{-}$ --- yellow; proton --- red; recoiling nuclei --- black. The event vertex was randomly placed inside the active volume of the 2x2 Demonstrator module.}
   \label{fig:2x2+MINERvA_event}
 \end{figure}
 
-For the studies shown in this document, a simulation was performed approximating the downstream MINERvA central tracking region with a box of scintillator, and the ArgonCube 2x2 Demonstrator module upstream of the shortened MINERvA detector. Neutrino interactions are generated in the ArgonCube active volume, and propagated through an approximation of the ArgonCube 2x2 demonstrator and partial MINERvA detector with a Geant4-based program\footnote{\url{https://github.com/dadwyer/argon_box}}.  The MINERvA detector is approximated by a rectangular box, \SI[product-units=repeat]{1.4x1.4}{\metre\squared} in the dimensions transverse to the beam.  The simulation includes the most downstream 12 modules (24 planes) of the tracker region, as well as the full downstream ECAL and HCAL regions.  The rectangular box represents the central part of the MINERvA inner detector, and is large enough to cover the entire ArgonCube active volume. An example event is shown in Figure~\ref{fig:2x2+MINERvA_event}, and can be compared with ArgonCube 2x2-only events in Fig.~\ref{fig:leaky_event}, and in Ref.~\cite{2x2@FNAL} Fig. 7. Note that the ProtoDUNE-ND-Tracker simulation only includes the ArgonCube cryostat and repurposed MINERvA detector components, no material was included outside these (so escaping particles simply leave without ever re-interacting).
+For the studies shown in this document, a simulation was performed approximating the downstream MINERvA central tracking region with a box of scintillator, and the ArgonCube 2x2 Demonstrator module upstream of the shortened MINERvA detector.
+Neutrino interactions are generated in the ArgonCube active volume, and propagated through an approximation of the ArgonCube 2x2 demonstrator and partial MINERvA detector with a Geant4-based program\footnote{\url{https://github.com/dadwyer/argon_box}}.  
+The MINERvA detector is approximated by a rectangular box, \SI[product-units=repeat]{1.4x1.4}{\metre\squared} in the dimensions transverse to the beam.  
+The simulation includes the most downstream 12 modules (24 planes) of the tracker region, as well as the full downstream ECAL and HCAL regions.  
+The rectangular box represents the central part of the MINERvA inner detector, and is large enough to cover the entire ArgonCube active volume. An example event is shown in Figure~\ref{fig:2x2+MINERvA_event}, and can be compared with ArgonCube 2x2-only events in Fig.~\ref{fig:leaky_event}, and in Ref.~\cite{2x2@FNAL} Fig. 7. Note that the ProtoDUNE-ND-Tracker simulation only includes the ArgonCube cryostat and repurposed MINERvA detector components, no material was included outside these (so escaping particles simply leave without ever re-interacting).
 
 In the following, we discuss potential detector physics studies, or improvements to detector physics studies presented in Ref.~\cite{2x2@FNAL}, where we include ProtoDUNE-ND-Tracker downstream of the ArgonCube 2x2 module.
 
