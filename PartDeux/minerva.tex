@@ -36,8 +36,15 @@ The rectangular box represents the central part of the MINERvA inner detector, a
 
 In the following, we discuss potential detector physics studies, or improvements to detector physics studies presented in Ref.~\cite{2x2@FNAL}, where we include ProtoDUNE-ND-Tracker downstream of the ArgonCube 2x2 module.
 
+\subsection{Repurposing MINERvA as a rock muon trigger}
+In the discussion in Section~\ref{sec:minerva}, the detector setup maximizes the amount of the MINERvA detector repurposed downstream of the ArgonCube 2x2 module, in order to increase containment in the very forward region, where most particles go. However, if MINOS-ND is also included as part of the ProtoDUNE-ND setup, this imperative is no longer there, and less of MINERvA would be needed downstream. In this case, MINERvA modules could be redeployed to the sides of the 2x2 cryostat to act as a rock muon tagger, and to tag escaping particles. In practice, these panels could be used to better identify a sample of fully contained neutrino events. Additionally to the cosmic and rock muon suppression studies outlined in Ref.~\cite{2x2@FNAL}, these tagging modules can be used to calibrate the electric field uniformity. 
+
+A calibrated electric field is vital for the ability to accurately measure $\frac{\mathrm{d}E}{\mathrm{d}x}$ within a TPC. The calibration requires crossing tracks with well defined start and end points~\cite{MicroBooNE_Laser}, covering the entire active argon volume.
+12 MINERvA tracker modules upstream and downstream (24 total) of the 2x2 will provide sufficient resolution on the muon crossing position, and the ability to point in both directions. 
+
+
 \subsection{Track matching}
-All DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component, downstream of the LAr ArgonCube component, and downstream of the HPgTPC, to tag escaping particles, photons, and possibly neutrons. There is a significant reconstruction challenge in matching the escaping tracks from the LAr component, with the signals in the scintillator, given the slow charge readout in the LAr TPC, and the high multiplicity DUNE-ND environment.
+All DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scintillator component, downstream of the LAr ArgonCube component, and downstream of the HPgTPC, to tag escaping neutral particles. There is a significant reconstruction challenge in matching the escaping tracks from the LAr component, with the signals in the scintillator, given the slow charge readout in the LAr TPC, and the high multiplicity DUNE-ND environment.
 
 \begin{figure}[htb]
   \centering
@@ -45,6 +52,7 @@ All DUNE ND designs considered in Ref.~\cite{dune_ndcsg} include some fast scint
   \caption{Simulated number of true tracks produced by simulated GENIE interactions in the ArgonCube 2x2 active volume, which deposit energy in both the 2x2 module, and the ProtoDUNE-ND-Tracker positioned downstream of the 2x2.}
   \label{fig:track_multiplicity_min}
 \end{figure}
+
 Many tracks produced in the LAr volume are not contained by the ArgonCube 2x2 module, and the majority will escape downstream. In Figure~\ref{fig:hadronic_containment}, the multiplicity of tracks which deposit charge in both the ArgonCube 2x2 module and the ProtoDUNE-ND-Tracker, included in the simulation described above, are shown. Full DUNE-ND events are likely to have an even higher LAr to scintillator track multiplicity due to the pile-up in the much larger 35 t ArgonCube LAr detector. But it is clear from Figure~\ref{fig:track_multiplicity_min} that including the ProtoDUNE-ND-Tracker in ProtoDUNE-ND would provide useful data with which to start tackling this reconstruction problem.
 
 \begin{figure}[htb]
